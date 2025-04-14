@@ -602,10 +602,11 @@ h1 {
   box-shadow: var(--shadow-sm);
 }
 
+/* Footer */
 footer {
-  background: var(--dark);
+  background: var(--darker);
   color: white;
-  padding: 60px 0 20px;
+  padding: 80px 0 20px;
 }
 
 .footer-grid {
@@ -621,6 +622,7 @@ footer {
   color: white;
   margin-bottom: 20px;
   display: block;
+  text-decoration: none;
 }
 
 .footer-logo span {
@@ -630,6 +632,7 @@ footer {
 .footer-about p {
   opacity: 0.7;
   margin-bottom: 20px;
+  line-height: 1.7;
 }
 
 .social-links {
@@ -645,17 +648,21 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
+  transition: var(--transition);
+  color: white;
+  text-decoration: none;
 }
 
 .social-link:hover {
   background: var(--primary);
+  transform: translateY(-3px);
 }
 
 .footer-links h3 {
   font-size: 18px;
   margin-bottom: 20px;
   opacity: 0.9;
+  font-weight: 600;
 }
 
 .footer-links ul {
@@ -663,18 +670,21 @@ footer {
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-links a {
   color: white;
   opacity: 0.7;
   text-decoration: none;
-  transition: opacity 0.3s;
+  transition: var(--transition);
+  display: inline-block;
 }
 
 .footer-links a:hover {
   opacity: 1;
+  color: var(--secondary);
+  transform: translateX(5px);
 }
 
 .footer-bottom {
@@ -685,6 +695,19 @@ footer {
   font-size: 14px;
 }
 
+.footer-bottom a {
+  color: white;
+  opacity: 0.9;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+/* Scroll to top button */
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
@@ -699,11 +722,11 @@ footer {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
   z-index: 99;
 }
 

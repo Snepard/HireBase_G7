@@ -1,267 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HireBase</title>
-    <meta name="description" content="HireBase connects top talent with amazing companies. Find your dream job or build your dream team with our advanced matching platform.">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
-</head>
-<body>
+    <meta
+      name="description"
+      content="HireBase connects top talent with amazing companies. Find your dream job or build your dream team with our advanced matching platform."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <nav class="header">
-                <a href="#" class="logo">
-                    <i class="fas fa-briefcase"></i>
-                    Hire<span>Base</span>
-                </a>
-                <div class="hamburger" onclick="toggleMenu()">☰</div>
-                <div class="nav-links" id="navMenu">
-                    <a href="#">Home</a>
-                    <a href="#">Find Jobs</a>
-                    <a href="#">Candidates</a>
-                    <a href="#">Employers</a>
-                    <a href="#">Resources</a>
-                </div>
-                <div class="auth-buttons">
-                    <button class="btn btn-outline">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Log In
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="fas fa-user-plus"></i>
-                        Sign Up
-                    </button>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="header">
+          <a href="#" class="logo">
+            <i class="fas fa-briefcase"></i>
+            Hire<span>Base</span>
+          </a>
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div class="nav-links" id="navMenu">
+            <a href="#">Home</a>
+            <a href="#">Find Jobs</a>
+            <a href="#">Candidates</a>
+            <a href="#">Employers</a>
+            <a href="#">Resources</a>
+          </div>
+          <div class="auth-buttons">
+            <button class="btn btn-outline">
+              <i class="fas fa-sign-in-alt"></i>
+              Log In
+            </button>
+            <button class="btn btn-primary">
+              <i class="fas fa-user-plus"></i>
+              Sign Up
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text fade-in">
-                    <h1>Find Your Dream Job or Top Talent</h1>
-                    <p class="delay-1">Join thousands of companies and job seekers using HireBase to connect with the perfect opportunities and candidates.</p>
-                    <div class="search-box delay-2">
-                        <input type="text" class="search-input" placeholder="Job title, keywords, or company">
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                            Search Jobs
-                        </button>
-                    </div>
-                    <div class="stats delay-3">
-                        <div class="stat-item">
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-text">Jobs Available</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">10K+</div>
-                            <div class="stat-text">Companies Hiring</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">1M+</div>
-                            <div class="stat-text">Active Candidates</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Happy team at work">
-                </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text fade-in">
+            <h1>Find Your Dream Job or Top Talent</h1>
+            <p class="delay-1">
+              Join thousands of companies and job seekers using HireBase to
+              connect with the perfect opportunities and candidates.
+            </p>
+            <div class="search-box delay-2">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Job title, keywords, or company"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+                Search Jobs
+              </button>
             </div>
+            <div class="stats delay-3">
+              <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-text">Jobs Available</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">10K+</div>
+                <div class="stat-text">Companies Hiring</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">1M+</div>
+                <div class="stat-text">Active Candidates</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image fade-in delay-1">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Happy team at work"
+            />
+          </div>
         </div>
+      </div>
     </section>
-    
+
     <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose HireBase</h2>
-                <p>We provide the best tools and resources to help you find the perfect match for your career or hiring needs.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Quick Hiring</h3>
-                    <p>Our advanced matching algorithm connects you with the most relevant candidates or jobs in seconds.</p>
-                </div>
-                <div class="feature-card fade-in delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Verified Profiles</h3>
-                    <p>All candidates and employers go through a rigorous verification process to ensure quality.</p>
-                </div>
-                <div class="feature-card fade-in delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Career Growth</h3>
-                    <p>Access resources and tools to help you grow your career or build your dream team.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose HireBase</h2>
+          <p>
+            We provide the best tools and resources to help you find the perfect
+            match for your career or hiring needs.
+          </p>
         </div>
+        <div class="features-grid">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Quick Hiring</h3>
+            <p>
+              Our advanced matching algorithm connects you with the most
+              relevant candidates or jobs in seconds.
+            </p>
+          </div>
+          <div class="feature-card fade-in delay-1">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Verified Profiles</h3>
+            <p>
+              All candidates and employers go through a rigorous verification
+              process to ensure quality.
+            </p>
+          </div>
+          <div class="feature-card fade-in delay-2">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Career Growth</h3>
+            <p>
+              Access resources and tools to help you grow your career or build
+              your dream team.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <section class="job-categories">
-        <div class="container">
-            <div class="section-title">
-                <h2>Popular Job Categories</h2>
-                <p>Browse jobs by category to find the perfect match for your skills and experience.</p>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card fade-in">
-                    <div class="category-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Software Development</h3>
-                    <p>1,200+ Jobs Available</p>
-                </div>
-                <div class="category-card fade-in delay-1">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Data Science</h3>
-                    <p>850+ Jobs Available</p>
-                </div>
-                <div class="category-card fade-in delay-2">
-                    <div class="category-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Design</h3>
-                    <p>700+ Jobs Available</p>
-                </div>
-                <div class="category-card fade-in">
-                    <div class="category-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Marketing</h3>
-                    <p>1,050+ Jobs Available</p>
-                </div>
-                <div class="category-card fade-in delay-1">
-                    <div class="category-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>Finance</h3>
-                    <p>900+ Jobs Available</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Popular Job Categories</h2>
+          <p>
+            Browse jobs by category to find the perfect match for your skills
+            and experience.
+          </p>
         </div>
+        <div class="categories-grid">
+          <div class="category-card fade-in">
+            <div class="category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Software Development</h3>
+            <p>1,200+ Jobs Available</p>
+          </div>
+          <div class="category-card fade-in delay-1">
+            <div class="category-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3>Data Science</h3>
+            <p>850+ Jobs Available</p>
+          </div>
+          <div class="category-card fade-in delay-2">
+            <div class="category-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3>Design</h3>
+            <p>700+ Jobs Available</p>
+          </div>
+          <div class="category-card fade-in">
+            <div class="category-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <h3>Marketing</h3>
+            <p>1,050+ Jobs Available</p>
+          </div>
+          <div class="category-card fade-in delay-1">
+            <div class="category-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3>Finance</h3>
+            <p>900+ Jobs Available</p>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>Hear from people who found their dream jobs and companies who built amazing teams.</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"HireBase helped me find my dream job in just two weeks! The platform is so intuitive and the job matches were spot on."</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Product Designer at TechCorp</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in delay-1">
-                    <p class="testimonial-text">"We've hired 5 amazing developers through HireBase in the last year. The quality of candidates is exceptional."</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Michael Chen</h4>
-                            <p>CTO at StartupX</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in delay-2">
-                    <p class="testimonial-text">"After months of searching, I found the perfect remote position through HireBase. The application process was seamless."</p>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Emma Rodriguez</h4>
-                            <p>Senior Developer at RemoteCo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Success Stories</h2>
+          <p>
+            Hear from people who found their dream jobs and companies who built
+            amazing teams.
+          </p>
         </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-text">
+              "HireBase helped me find my dream job in just two weeks! The
+              platform is so intuitive and the job matches were spot on."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/45.jpg"
+                alt="Sarah Johnson"
+                class="author-avatar"
+              />
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <p>Product Designer at TechCorp</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in delay-1">
+            <p class="testimonial-text">
+              "We've hired 5 amazing developers through HireBase in the last
+              year. The quality of candidates is exceptional."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Michael Chen"
+                class="author-avatar"
+              />
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <p>CTO at StartupX</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in delay-2">
+            <p class="testimonial-text">
+              "After months of searching, I found the perfect remote position
+              through HireBase. The application process was seamless."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Emma Rodriguez"
+                class="author-avatar"
+              />
+              <div class="author-info">
+                <h4>Emma Rodriguez</h4>
+                <p>Senior Developer at RemoteCo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <section class="cta">
-        <div class="container">
-            <h2 class="fade-in">Ready to Take the Next Step?</h2>
-            <p class="fade-in delay-1">Join thousands of companies and job seekers who are already finding success with HireBase.</p>
-            <div class="cta-buttons fade-in delay-2">
-                <button class="btn btn-white">
-                    <i class="fas fa-briefcase"></i>
-                    Post a Job
-                </button>
-                <button class="btn btn-transparent">
-                    <i class="fas fa-file-upload"></i>
-                    Upload Resume
-                </button>
-            </div>
+      <div class="container">
+        <h2 class="fade-in">Ready to Take the Next Step?</h2>
+        <p class="fade-in delay-1">
+          Join thousands of companies and job seekers who are already finding
+          success with HireBase.
+        </p>
+        <div class="cta-buttons fade-in delay-2">
+          <button class="btn btn-white">
+            <i class="fas fa-briefcase"></i>
+            Post a Job
+          </button>
+          <button class="btn btn-transparent">
+            <i class="fas fa-file-upload"></i>
+            Upload Resume
+          </button>
         </div>
+      </div>
     </section>
-    
+
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="#" class="footer-logo">Hire<span>Base</span></a>
-                    <p>Connecting top talent with amazing companies worldwide. Our mission is to make hiring and job searching simple and effective.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>For Job Seekers</h3>
-                    <ul>
-                        <li><a href="#">Browse Jobs</a></li>
-                        <li><a href="#">Create Profile</a></li>
-                        <li><a href="#">Job Alerts</a></li>
-                        <li><a href="#">Career Resources</a></li>
-                        <li><a href="#">Salary Calculator</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>For Employers</h3>
-                    <ul>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">Browse Candidates</a></li>
-                        <li><a href="#">Pricing Plans</a></li>
-                        <li><a href="#">Hiring Resources</a></li>
-                        <li><a href="#">Recruitment Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about fade-in">
+            <a href="#" class="footer-logo">Hire<span>Base</span></a>
+            <p>
+              Connecting top talent with amazing companies worldwide. Our
+              mission is to make hiring and job searching simple and effective.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 HireBase. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
+          </div>
+          <div class="footer-links fade-in delay-1">
+            <h3>For Job Seekers</h3>
+            <ul>
+              <li><a href="#">Browse Jobs</a></li>
+              <li><a href="#">Create Profile</a></li>
+              <li><a href="#">Job Alerts</a></li>
+              <li><a href="#">Career Resources</a></li>
+              <li><a href="#">Salary Calculator</a></li>
+            </ul>
+          </div>
+          <div class="footer-links fade-in delay-1">
+            <h3>For Employers</h3>
+            <ul>
+              <li><a href="#">Post a Job</a></li>
+              <li><a href="#">Browse Candidates</a></li>
+              <li><a href="#">Pricing Plans</a></li>
+              <li><a href="#">Hiring Resources</a></li>
+              <li><a href="#">Recruitment Solutions</a></li>
+            </ul>
+          </div>
+          <div class="footer-links fade-in delay-2">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom fade-in delay-2">
+          <p>
+            &copy; 2023 HireBase. All rights reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+            <a href="#">Cookie Policy</a>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="app.js"></script>
-
-</body>
+  </body>
 </html>
