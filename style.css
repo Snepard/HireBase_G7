@@ -51,6 +51,7 @@ nav.header {
 .nav-links {
     display: flex;
     gap: 30px;
+    transition: all 0.3s ease-out;
 }
 
 .nav-links a {
@@ -62,6 +63,16 @@ nav.header {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+  
+.nav-links.active {
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .auth-buttons {
@@ -103,10 +114,6 @@ nav.header {
     font-size: 28px;
     cursor: pointer;
     user-select: none;
-}
-
-@media (max-width: 768px) {
-   
 }
 
 .hero {
@@ -394,7 +401,6 @@ h1 {
 .btn-transparent:hover {
     background: rgba(255, 255, 255, 0.1);
 }
-
 
 footer {
     background: var(--dark);
