@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HireBase | Sign Up</title>
     <link rel="stylesheet" href="signup.css">
-    <script src="signup.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,7 +15,73 @@
                 <p>Create your account to post jobs, find candidates, or discover your next career opportunity with top employers.</p>
             </div>
         </div>
-
+        <div class="right-section">
+            <div class="form-header">
+                <h2>Create your account</h2>
+                <p>Start your journey with HireBase today</p>
+            </div>
+            
+            <form>
+                <div class="name-fields">
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" placeholder="Doe" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                
+                <div class="account-type">
+                    <label>I want to:</label>
+                    <div class="account-type-options">
+                        <div class="account-type-option selected">
+                            <input type="radio" name="account-type" value="hire" checked>
+                            Hire talent
+                        </div>
+                        <div class="account-type-option">
+                            <input type="radio" name="account-type" value="work">
+                            Find work
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create account</button>
+                
+                <div class="divider">or sign up with</div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                        Google
+                    </button>
+                    <button type="button" class="social-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/LinkedIn_logo_initials.png" alt="LinkedIn">
+                        LinkedIn
+                    </button>
+                </div>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Log in</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
