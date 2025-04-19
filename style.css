@@ -1,0 +1,68 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .job-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .job-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .bookmark {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .bookmark:hover {
+    transform: scale(1.2);
+  }
+  
+  .company, .location {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .location {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .job-container .company {
+    margin-top: 5px;
+  }
+  
+  .job-container .location {
+    margin-top: 5px;
+  }
+  
