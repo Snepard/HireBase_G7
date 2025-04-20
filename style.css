@@ -145,4 +145,35 @@
 .social-share a:hover {
   text-decoration: underline;
 }
-  
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+  .job-container {
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 24px;
+  }
+
+  .job-info, .tags, .actions, .social-share {
+    font-size: 14px;
+  }
+
+  .tags {
+    flex-direction: column;
+  }
+
+  .tag {
+    margin-bottom: 8px;
+  }
+
+  .apply-btn, .save-btn {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .social-share a {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
