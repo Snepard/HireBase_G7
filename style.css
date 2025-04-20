@@ -194,3 +194,46 @@ background-color: #007bff;
 color: white;
 transform: scale(1.05);
 }
+.job-description, .benefits {
+  margin-top: 30px;
+}
+
+.job-description h3, .benefits h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.job-description p {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.job-description ul, .benefits ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+}
+
+.company-logo img {
+  height: 80px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
