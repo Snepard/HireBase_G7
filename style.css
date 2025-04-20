@@ -1,196 +1,196 @@
 /* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .job-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    margin: 20px;
-  }
-  
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .job-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .bookmark {
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .bookmark:hover {
-    transform: scale(1.2);
-  }
-  
-  .company, .location {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .location {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .job-container .company {
-    margin-top: 5px;
-  }
-  
-  .job-container .location {
-    margin-top: 5px;
-  }
-/* Container for the job info section */
-.job-info {
-  margin-top: 20px;
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.job-type, .salary, .date-posted {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.job-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.job-title {
+  font-size: 28px;
+  font-weight: bold;
   color: #333;
+}
+
+.bookmark {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bookmark:hover {
+  transform: scale(1.2);
+}
+
+.company, .location {
+  font-size: 16px;
+  color: #555;
   margin-bottom: 10px;
 }
 
+.location {
+  font-size: 14px;
+  color: #777;
+}
+
+.job-container .company {
+  margin-top: 5px;
+}
+
+.job-container .location {
+  margin-top: 5px;
+}
+/* Container for the job info section */
+.job-info {
+margin-top: 20px;
+font-size: 16px;
+}
+
+.job-type, .salary, .date-posted {
+color: #333;
+margin-bottom: 10px;
+}
+
 .job-type {
-  font-weight: bold;
+font-weight: bold;
 }
 
 .salary {
-  color: #28a745; /* Green color for salary */
+color: #28a745; /* Green color for salary */
 }
 
 .date-posted {
-  color: #777; /* Lighter color for the date */
+color: #777; /* Lighter color for the date */
 }
 
 /* Tags Styling */
 .tags {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+margin-top: 20px;
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
 }
 
 .tag {
-  background-color: #e0e0e0;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #555;
-  transition: background-color 0.3s ease;
+background-color: #e0e0e0;
+padding: 5px 15px;
+border-radius: 20px;
+font-size: 14px;
+color: #555;
+transition: background-color 0.3s ease;
 }
 
 .tag:hover {
-  background-color: #007bff; /* Hover effect on tags */
-  color: white;
+background-color: #007bff; /* Hover effect on tags */
+color: white;
 }
 
 /* Action Buttons Styling */
 .actions {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 .apply-btn, .save-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+background-color: #007bff;
+color: white;
+border: none;
+padding: 12px 20px;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 .apply-btn:hover, .save-btn:hover {
-  background-color: #0056b3;
+background-color: #0056b3;
 }
 
 /* Social Share Styling */
 .social-share {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 .social-share a {
-  color: #0073b1; /* LinkedIn Blue */
-  margin-right: 10px;
-  text-decoration: none;
-  font-size: 14px;
+color: #0073b1; /* LinkedIn Blue */
+margin-right: 10px;
+text-decoration: none;
+font-size: 14px;
 }
 
 .social-share a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 /* Responsive styling for smaller screens */
 @media (max-width: 600px) {
-  .job-container {
-    padding: 15px;
-  }
+.job-container {
+  padding: 15px;
+}
 
-  .job-title {
-    font-size: 24px;
-  }
+.job-title {
+  font-size: 24px;
+}
 
-  .job-info, .tags, .actions, .social-share {
-    font-size: 14px;
-  }
+.job-info, .tags, .actions, .social-share {
+  font-size: 14px;
+}
 
-  .tags {
-    flex-direction: column;
-  }
+.tags {
+  flex-direction: column;
+}
 
-  .tag {
-    margin-bottom: 8px;
-  }
+.tag {
+  margin-bottom: 8px;
+}
 
-  .apply-btn, .save-btn {
-    width: 100%;
-    padding: 15px;
-  }
+.apply-btn, .save-btn {
+  width: 100%;
+  padding: 15px;
+}
 
-  .social-share a {
-    display: block;
-    margin-bottom: 10px;
-  }
+.social-share a {
+  display: block;
+  margin-bottom: 10px;
+}
 }
 
 /* Button hover effects */
 .apply-btn, .save-btn {
-  transition: background-color 0.3s ease, transform 0.3s ease;
+transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .apply-btn:hover, .save-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+background-color: #0056b3;
+transform: scale(1.05);
 }
 
 /* Tag hover effects */
 .tag:hover {
-  background-color: #007bff;
-  color: white;
-  transform: scale(1.05);
+background-color: #007bff;
+color: white;
+transform: scale(1.05);
 }
