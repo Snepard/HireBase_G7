@@ -177,3 +177,20 @@
     margin-bottom: 10px;
   }
 }
+
+/* Button hover effects */
+.apply-btn, .save-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-btn:hover, .save-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Tag hover effects */
+.tag:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
