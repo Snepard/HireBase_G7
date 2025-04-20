@@ -1,64 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Job Detail</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frontend Developer - TechNova Inc.</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="job-container">
-        <div class="job-header">
-          <div class="job-title">Frontend Developer</div>
-          <div class="bookmark">🔖</div>
-        </div>
-        <div class="company">TechNova Inc.</div>
-        <div class="location">📍 San Francisco, CA (Remote Friendly)</div>
-        <div class="job-info">
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">JavaScript</span>
-          </div>
-          <div class="job-description">
-            <h3>Full Job Description</h3>
-            <p>
-              We are looking for a passionate Frontend Developer to join our team. You’ll work with a team of developers and designers to build user-friendly web applications.
-            </p>
-            <ul>
-              <li>Develop new user-facing features using React.js</li>
-              <li>Ensure the technical feasibility of UI/UX designs</li>
-              <li>Collaborate with other team members and stakeholders</li>
-              <li>Write reusable, testable, and efficient code</li>
-            </ul>
-          </div>
-          <div class="benefits">
-            <h3>Benefits</h3>
-            <ul>
-              <li>Flexible working hours</li>
-              <li>Remote work option</li>
-              <li>Health and dental insurance</li>
-              <li>Annual bonus</li>
-            </ul>
-          </div>
-          
-          
-          <div class="job-type">Job Type: Full-time</div>
-          <div class="salary">Salary: $80,000 - $100,000 per year</div>
-          <div class="date-posted">Posted: 2 days ago</div>
+  <main class="job-container">
+    <header class="job-header">
+      <div>
+        <h1 class="job-title">Frontend Developer</h1>
+        <p class="company">TechNova Inc.</p>
+        <p class="location">San Francisco, CA <span class="remote">(Remote Friendly)</span></p>
       </div>
-      <div class="actions">
-        <button class="btn apply-btn">Apply Now</button>
-        <button class="btn save-btn">Save Job</button>
-      </div>
-      <div class="social-share">
-        <a href="https://twitter.com/intent/tweet?url=https://job-link.com" target="_blank">Share on Twitter</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://job-link.com" target="_blank">Share on LinkedIn</a>
-      </div>
-      
-      
+      <button class="bookmark" title="Bookmark this job">🔖</button>
+    </header>
+
+    <section class="tags">
+      <span class="tag">React</span>
+      <span class="tag">Frontend</span>
+      <span class="tag">JavaScript</span>
+    </section>
+
+    <section class="job-description">
+      <h2>Full Job Description</h2>
+      <p>
+        We are looking for a passionate Frontend Developer to join our team.
+        You’ll work with a team of developers and designers to build user-friendly web applications.
+      </p>
+      <ul>
+        <li>Develop new user-facing features using React.js</li>
+        <li>Ensure the technical feasibility of UI/UX designs</li>
+        <li>Collaborate with other team members and stakeholders</li>
+        <li>Write reusable, testable, and efficient code</li>
+      </ul>
+    </section>
+
+    <section class="benefits">
+      <h2>Benefits</h2>
+      <ul>
+        <li>Flexible working hours</li>
+        <li>Remote work option</li>
+        <li>Health and dental insurance</li>
+        <li>Annual bonus</li>
+      </ul>
+    </section>
+
+    <section class="job-info">
+      <p class="job-type"><strong>Job Type:</strong> Full-time</p>
+      <p class="salary"><strong>Salary:</strong> $80,000 - $100,000 per year</p>
+      <p class="date-posted">Posted: 2 days ago</p>
+    </section>
+
+    <div class="actions">
+      <button class="apply-btn">Apply Now</button>
+      <button class="save-btn">Save Job</button>
     </div>
 
+    <section class="social-share" aria-label="Social Sharing">
+      <a href="https://twitter.com/intent/tweet?url=https://job-link.com" target="_blank" rel="noopener">Share on Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://job-link.com" target="_blank" rel="noopener">Share on LinkedIn</a>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 TechNova Inc. | <a href="#">View more jobs</a></p>
+    </footer>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
