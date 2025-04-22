@@ -15,6 +15,43 @@ body {
   color: #1d1d1f;
 }
 
+.profile-header {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.banner-img {
+  width: 100%;
+  height: 180px;
+  background-image: url('https://via.placeholder.com/850x180');
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar-wrapper {
+  position: absolute;
+  bottom: -40px;
+  left: 32px;
+  width: 80px;
+  height: 80px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .job-container {
   background-color: #ffffff;
   padding: 32px;
