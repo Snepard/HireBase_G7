@@ -11,6 +11,7 @@
     <header class="job-header">
       <div>
         <h1 class="job-title">Frontend Developer</h1>
+        
         <p class="company">TechNova Inc.</p>
         <p class="location">San Francisco, CA <span class="remote">(Remote Friendly)</span></p>
       </div>
@@ -24,17 +25,21 @@
     </section>
 
     <section class="job-description">
-      <h2>Full Job Description</h2>
-      <p>
-        We are looking for a passionate Frontend Developer to join our team.
-        You’ll work with a team of developers and designers to build user-friendly web applications.
-      </p>
-      <ul>
-        <li>Develop new user-facing features using React.js</li>
-        <li>Ensure the technical feasibility of UI/UX designs</li>
-        <li>Collaborate with other team members and stakeholders</li>
-        <li>Write reusable, testable, and efficient code</li>
-      </ul>
+      <h2 onclick="toggleDescription()" class="description-toggle">
+        Full Job Description <span class="toggle-icon">▼</span>
+      </h2>
+      <div class="description-content">
+        <p>
+          We are looking for a passionate Frontend Developer to join our team.
+          You’ll work with a team of developers and designers to build user-friendly web applications.
+        </p>
+        <ul>
+          <li>Develop new user-facing features using React.js</li>
+          <li>Ensure the technical feasibility of UI/UX designs</li>
+          <li>Collaborate with other team members and stakeholders</li>
+          <li>Write reusable, testable, and efficient code</li>
+        </ul>
+      </div>
     </section>
 
     <section class="benefits">
