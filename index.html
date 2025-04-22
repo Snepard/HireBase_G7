@@ -23,22 +23,39 @@
       <span class="tag">Frontend</span>
       <span class="tag">JavaScript</span>
     </section>
-
     <section class="job-description">
-      <h2 onclick="toggleDescription()" class="description-toggle">
-        Full Job Description <span class="toggle-icon">▼</span>
-      </h2>
-      <div class="description-content">
-        <p>
-          We are looking for a passionate Frontend Developer to join our team.
-          You’ll work with a team of developers and designers to build user-friendly web applications.
-        </p>
-        <ul>
-          <li>Develop new user-facing features using React.js</li>
-          <li>Ensure the technical feasibility of UI/UX designs</li>
-          <li>Collaborate with other team members and stakeholders</li>
-          <li>Write reusable, testable, and efficient code</li>
-        </ul>
+      <button class="description-toggle" aria-expanded="false" aria-controls="description-content">
+        <div class="toggle-header">
+          <h2>Full Job Description</h2>
+          <span class="toggle-icon">
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1.5L8 8.5L15 1.5" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+        <p class="toggle-subtitle">Click to view responsibilities and requirements</p>
+      </button>
+      
+      <div id="description-content" class="description-content">
+        <div class="content-inner">
+          <h3>Overview</h3>
+          <p>We are looking for a passionate Frontend Developer to join our team. You’ll build user-friendly web applications using modern technologies.</p>
+          
+          <h3>Responsibilities</h3>
+          <ul class="responsibilities">
+            <li>Develop new user-facing features using <strong>React.js</strong></li>
+            <li>Optimize applications for maximum speed and scalability</li>
+            <li>Collaborate with UX designers to implement pixel-perfect interfaces</li>
+            <li>Write unit and integration tests (Jest/Cypress)</li>
+          </ul>
+          
+          <h3>Requirements</h3>
+          <ul class="requirements">
+            <li>3+ years of frontend development experience</li>
+            <li>Proficiency in JavaScript (ES6+), HTML5, and CSS3</li>
+            <li>Experience with state management (Redux/Zustand)</li>
+          </ul>
+        </div>
       </div>
     </section>
 

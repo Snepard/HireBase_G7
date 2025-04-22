@@ -1,15 +1,7 @@
-function toggleDescription() {
-    const content = document.querySelector('.description-content');
-    const icon = document.querySelector('.toggle-icon');
-    
-    content.classList.toggle('show');
-    icon.classList.toggle('rotate');
-  }
+document.querySelector('.description-toggle').addEventListener('click', function() {
+  const content = document.getElementById('description-content');
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
   
-  // Optional: Close dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.job-description')) {
-      document.querySelector('.description-content').classList.remove('show');
-      document.querySelector('.toggle-icon').classList.remove('rotate');
-    }
-  });
+  this.setAttribute('aria-expanded', !isExpanded);
+  content.classList.toggle('show');
+});

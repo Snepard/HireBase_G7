@@ -241,3 +241,92 @@ body {
 .toggle-icon.rotate {
   transform: rotate(180deg);
 }
+/* ===== Professional Dropdown Styles ===== */
+.job-description {
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.description-toggle {
+  width: 100%;
+  text-align: left;
+  background: white;
+  border: none;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.description-toggle:hover {
+  background: #F8FAFC;
+}
+
+.toggle-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #2D3748;
+}
+
+.toggle-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 400;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon svg {
+  vertical-align: middle;
+}
+
+.description-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  background: #F8FAFC;
+}
+
+.description-content.show {
+  max-height: 1000px; /* Adjust based on content */
+}
+
+.content-inner {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.content-inner h3 {
+  color: #4A5568;
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.content-inner ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.content-inner li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Animation when expanded */
+.description-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.description-toggle[aria-expanded="true"] + .description-content {
+  border-top: 1px solid #E2E8F0;
+}
