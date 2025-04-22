@@ -71,6 +71,7 @@ body {
   margin-bottom: 24px;
 }
 
+
 .job-title {
   font-size: 32px;
   font-weight: 600;
@@ -91,6 +92,32 @@ body {
 .bookmark:hover {
   transform: scale(1.2);
 }
+
+.profile-details {
+  max-width: 850px;
+  margin: 60px auto 20px;
+  padding: 0 32px;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.profile-handle {
+  color: #6e6e73;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.profile-bio {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #3c3c43;
+}
+
 
 /* Tags */
 .tags {
