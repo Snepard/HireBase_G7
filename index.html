@@ -16,33 +16,31 @@
 
 <body>
   <header>
-    <div class="container">
-      <nav class="header">
+    <div class="container-full">
+      <nav class="header transparent" id="mainNavbar">
         <a href="#" class="logo">
           <i class="fas fa-briefcase"></i>
           Hire<span>Base</span>
         </a>
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
         <div class="nav-links" id="navMenu">
-          <a href="#">Home</a>
-          <a href="#">Find Jobs</a>
-          <a href="#">Candidates</a>
-          <a href="#">Employers</a>
-          <a href="#">Resources</a>
+          <a href="#" class="active">Home</a>
+          <a href="find-jobs.html">Find Jobs</a>
+          <a href="find-candidates.html">Find Candidates</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
         </div>
+        
         <div class="auth-buttons">
           <a href="login.html">
-          <button class="btn btn-outline">
-            <i class="fas fa-sign-in-alt"></i>
-            Log In
-          </button>
+            <button class="btn btn-primary">
+              Get Started
+            </button>
           </a>
-          <a href="signup.html">
-          <button class="btn btn-primary">
-            <i class="fas fa-user-plus"></i>
-            Sign Up
-          </button>
-          </a>
+        </div>
+        
+        <div class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle navigation">
+          ☰
         </div>
       </nav>
     </div>
