@@ -124,7 +124,37 @@
                     <button class="btn apply-filters-btn">Apply Filters</button>
                     <button class="btn reset-filters-btn">Reset All</button>
                 </aside>
-                
+
+                <section class="job-listings">
+                    <div class="listings-header">
+                        <h2>Showing <span id="job-count">1,245</span> Jobs</h2>
+                        <div class="sort-options">
+                            <label>Sort by:</label>
+                            <select id="sort-by">
+                                <option value="recent">Most Recent</option>
+                                <option value="relevant">Most Relevant</option>
+                                <option value="salary-high">Highest Salary</option>
+                                <option value="salary-low">Lowest Salary</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="job-cards" id="job-cards">
+                        <!-- Job cards will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                        <div class="page-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span>...</span>
+                            <button class="page-btn">8</button>
+                        </div>
+                        <button class="pagination-btn">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
