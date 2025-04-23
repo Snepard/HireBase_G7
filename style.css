@@ -111,3 +111,53 @@ body {
 .main-nav ul li a:hover {
     color: var(--primary-color);
 }
+.main-content {
+    padding: 40px 0;
+}
+
+.filters-section {
+    display: flex;
+    gap: 30px;
+}
+
+.mobile-filters-toggle {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.mobile-filters-toggle button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filters-sidebar {
+    width: 280px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
