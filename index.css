@@ -175,3 +175,42 @@ nav-links {
 .search-btn:hover {
     background-color: var(--primary-dark);
 }
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 1px;
+    background-color: var(--border-color);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6b8cff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: var(--light-text);
+    font-size: 16px;
+    font-weight: 500;
+}
