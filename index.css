@@ -214,3 +214,72 @@ nav-links {
     font-size: 16px;
     font-weight: 500;
 }
+.company-profile {
+    display: flex;
+    margin: 40px 0 60px;
+    gap: 40px;
+}
+
+.company-info {
+    flex: 1;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
+.company-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(74, 107, 255, 0.1);
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.company-meta {
+    color: var(--light-text);
+    margin-bottom: 8px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.company-meta i {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.company-website {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.company-website:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
