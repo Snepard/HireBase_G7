@@ -15,3 +15,10 @@ document.addEventListener('DOMContentLoaded'), function() {
         });
     });
 }
+const searchBtn = document.querySelector('.search-btn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function() {
+            const searchInput = document.querySelector('.search-input');
+            alert(`Searching for: ${searchInput.value}`);
+        });
+    }
