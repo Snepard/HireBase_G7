@@ -8,15 +8,27 @@
 </head>
 
 <body>
-  <header class="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-logo">HealthPlus</a>
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Jobs</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-      <button class="nav-btn">Post a Job</button>
+<header>
+  <div class="container-full">
+    <nav class="header transparent" id="mainNavbar">
+      <a href="#" class="logo">
+        <i class="fas fa-briefcase"></i>
+        Hire<span>Base</span>
+      </a>
+      
+      <div class="nav-links" id="navMenu">
+        <a href="#" class="active">Home</a>
+        <a href="find-jobs.html">Find Jobs</a>
+        <a href="find-candidates.html">Find Candidates</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      
+
+      
+      <div class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </div>
     </nav>
   </div>
 </header>
