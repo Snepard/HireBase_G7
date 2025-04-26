@@ -334,3 +334,130 @@ nav-links {
     margin-bottom: 15px;
     line-height: 1.7;
 }
+
+.job-listings {
+    flex: 2;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: var(--primary-color);
+}
+
+.job-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(74, 107, 255, 0.3);
+}
+
+.job-card.featured::before {
+    content: 'Featured';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--success-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.job-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.job-meta {
+    display: flex;
+    gap: 20px;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.job-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.job-meta-item i {
+    font-size: 14px;
+}
+
+.job-description {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.job-skills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.skill-tag {
+    background-color: #f0f4ff;
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.job-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-job {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.save-job:hover {
+    color: var(--primary-color);
+}
+
+.save-job i {
+    font-size: 16px;
+}
+
+.job-posted {
+    font-size: 13px;
+    color: var(--light-text);
+}
+
