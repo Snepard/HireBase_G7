@@ -308,3 +308,29 @@ nav-links {
     color: white;
     transform: translateY(-2px);
 }
+.company-description {
+    margin-bottom: 30px;
+}
+
+.company-description h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.company-description h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, rgba(74, 107, 255, 0.3) 100%);
+    border-radius: 3px;
+}
+.company-description p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
