@@ -1,4 +1,3 @@
-
 :root {
   --primary: #3b82f6;
   --primary-dark: #2563eb;
@@ -29,27 +28,27 @@ body {
   padding-top: var(--header-height);
 }
 
-/* Header Styles */
+/* Header */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: white;
+  background: white;
   box-shadow: var(--shadow-sm);
   height: var(--header-height);
+  z-index: 1000;
   align-content: center;
 }
 
-/* Navigation */
+/* Navbar */
 nav.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  height: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
 }
 
 .logo {
@@ -59,7 +58,6 @@ nav.header {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .logo span {
@@ -69,49 +67,41 @@ nav.header {
 .nav-links {
   display: flex;
   gap: 30px;
-  margin: 0 auto 0 0;
-  padding-left: 20px;
+  position: relative;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--dark);
   font-weight: 500;
-  transition: var(--transition);
   padding: 8px 16px;
   border-radius: 20px;
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
   color: var(--primary);
 }
 
-
-.auth-buttons {
-  display: flex;
-  gap: 15px;
-  margin-left: 20px;
+/* Fluid Pill Effect */
+.nav-links::before {
+  content: "";
+  position: absolute;
+  height: 36px;
+  width: var(--pill-width);
+  left: var(--pill-left);
+  background-color: transparent;
+  border: 1px solid var(--dark);
+  border-radius: 18px;
+  transition: var(--pill-transition);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  z-index: -1;
 }
 
-.btn {
-  padding: 10px 20px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  border: none;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  border-radius: 20px;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+.nav-links:hover::before {
+  opacity: 1;
 }
 
 .hamburger {
@@ -120,7 +110,7 @@ nav.header {
   cursor: pointer;
 }
 
-/* Main Container */
+/* Main Content */
 .main-content {
   max-width: 1280px;
   margin: 2rem auto;
@@ -131,25 +121,15 @@ nav.header {
 .layout-wrapper {
   display: flex;
   gap: 40px;
-  width: 100%;
-}
-
-/* Job Container */
-.job-container {
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  flex: 3;
-  overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
   flex: 1;
-  background: #ffffff;
+  background: transparent;
   padding: 24px;
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-md);
   height: fit-content;
   position: sticky;
   top: calc(var(--header-height) + 40px);
@@ -159,45 +139,110 @@ nav.header {
   font-size: 18px;
   font-weight: 600;
   color: #111827;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.job-listings {
-  list-style: none;
+.sidebar-job-card {
+  background: #e6ff00;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: all 0.3s ease;
 }
 
-.job-listings li {
-  border-bottom: 1px solid #e5e7eb;
-  padding: 16px 0;
+.sidebar-job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-.job-listings li:last-child {
-  border-bottom: none;
+.sidebar-job-content {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
 }
 
-.job-listings h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
-  color: #1f2937;
-}
-
-.job-listings p {
-  font-size: 14px;
+.sidebar-job-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
   color: #6b7280;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.job-listings a {
+.sidebar-job-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.sidebar-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.sidebar-job-meta span {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.sidebar-job-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-job-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-job-user img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-job-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.sidebar-job-actions a {
+  font-size: 14px;
+  font-weight: 500;
   color: var(--primary);
   text-decoration: none;
 }
 
-.job-listings a:hover {
+.sidebar-job-actions a:hover {
   text-decoration: underline;
 }
 
-/* Job Card Banner */
+/* Job Container */
+.job-container {
+  flex: 3;
+  background: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+/* Banner */
 .job-card {
   position: relative;
 }
@@ -205,8 +250,7 @@ nav.header {
 .banner {
   height: 200px;
   overflow: hidden;
-  position: relative;
-  background-color: #e0f2fe;
+  background: #e0f2fe;
 }
 
 .banner-image {
@@ -219,21 +263,12 @@ nav.header {
   width: 88px;
   height: 88px;
   border-radius: 12px;
-  border: 4px solid #fff;
+  border: 4px solid white;
   position: absolute;
   bottom: -44px;
   left: 32px;
   background: #bfdbfe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.avatar svg {
-  width: 48px;
-  height: 48px;
-  color: #3b82f6;
 }
 
 .card-body {
@@ -250,8 +285,8 @@ nav.header {
 .job-title {
   font-size: 34px;
   font-weight: 800;
-  margin-bottom: 18px;
   color: #111827;
+  margin-bottom: 18px;
 }
 
 .job-meta {
@@ -261,34 +296,15 @@ nav.header {
   color: #6e6e73;
 }
 
-.job-meta span {
-  display: flex;
-  align-items: center;
-}
-
-.job-meta span svg {
-  margin-right: 6px;
-  width: 16px;
-  height: 16px;
-  color: #9ca3af;
-}
-
-.salary {
-  color: var(--secondary);
-  font-weight: 600;
-}
-
 /* Profile */
 .profile-details {
-  padding: 36px 36px 24px;
+  padding: 36px;
   border-bottom: 1px solid var(--border-gray);
 }
 
 .profile-name {
   font-size: 24px;
   font-weight: 700;
-  color: #111827;
-  margin-bottom: 6px;
 }
 
 .profile-handle {
@@ -312,30 +328,14 @@ nav.header {
 }
 
 .detail-block {
-  background: #f9fafb;
+  background: var(--bg-light);
   padding: 20px;
   border-radius: 16px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .detail-block:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-.detail-block h3 {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 6px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.detail-block p {
-  font-size: 16px;
-  font-weight: 500;
-  color: #1a1a1a;
 }
 
 /* Skills */
@@ -344,53 +344,8 @@ nav.header {
   border-bottom: 1px solid var(--border-gray);
 }
 
-.section-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 20px;
-}
-
 .skills-list {
   list-style: none;
-}
-
-.skill-item {
-  display: flex;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.skill-item:last-child {
-  border-bottom: none;
-}
-
-.skill-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.skill-icon.yellow {
-  color: #d97706;
-}
-
-.skill-icon.gray {
-  color: #4b5563;
-}
-
-.skill-icon.red {
-  color: #dc2626;
-}
-
-.skill-icon.purple {
-  color: #7c3aed;
 }
 
 /* Job Description */
@@ -399,85 +354,27 @@ nav.header {
   border-bottom: 1px solid var(--border-gray);
 }
 
-.job-description h3 {
-  font-size: 18px;
-  margin: 24px 0 12px;
-  color: #111827;
-}
-
-.job-description p {
-  font-size: 16px;
-  color: #4b5563;
-  margin-bottom: 16px;
-}
-
-/* Responsibilities */
-.responsibilities {
+.job-description ul {
   list-style: none;
-  padding: 0;
 }
 
-.responsibilities li {
+.job-description li {
   position: relative;
   padding-left: 28px;
   margin-bottom: 10px;
-  font-size: 16px;
-  color: #374151;
 }
 
-.responsibilities li::before {
+.job-description li::before {
   content: "•";
-  color: var(--primary);
   position: absolute;
   left: 0;
-  font-size: 20px;
-  top: 0;
+  color: var(--primary);
 }
 
 /* About Company */
 .about-company {
   padding: 36px;
   border-bottom: 1px solid var(--border-gray);
-}
-
-.description-card {
-  background-color: #f9fafb;
-  border-radius: 12px;
-  padding: 1.25rem;
-  border: 1px solid #e5e7eb;
-}
-
-.card-title {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.card-title svg {
-  margin-right: 0.5rem;
-  color: #10b981;
-}
-
-.card-content {
-  font-size: 0.875rem;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-.more-btn {
-  display: inline-block;
-  margin-top: 0.375rem;
-  color: var(--primary);
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-decoration: none;
-}
-
-.more-btn:hover {
-  text-decoration: underline;
 }
 
 /* CTA Buttons */
@@ -495,40 +392,36 @@ nav.header {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   border: none;
 }
 
 .apply-btn {
-  background-color: var(--primary);
-  color: #fff;
+  background: var(--primary);
+  color: white;
 }
 
 .apply-btn:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  background: var(--primary-dark);
 }
 
 .save-btn {
-  background-color: #ffffff;
+  background: white;
   color: var(--primary);
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-gray);
 }
 
 .save-btn:hover {
-  background-color: #f3f4f6;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: var(--bg-light);
 }
 
 /* Footer */
 .footer {
   padding: 24px 36px;
-  border-top: 1px solid #e5e7eb;
   font-size: 14px;
-  color: #9ca3af;
   text-align: center;
+  color: #9ca3af;
+  border-top: 1px solid var(--border-gray);
 }
 
 .footer a {
@@ -540,7 +433,7 @@ nav.header {
   text-decoration: underline;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 1024px) {
   .layout-wrapper {
     flex-direction: column;
@@ -554,64 +447,27 @@ nav.header {
 }
 
 @media (max-width: 768px) {
-  /* Mobile Navigation */
   .hamburger {
     display: inline-block;
   }
 
   .nav-links {
     display: none;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
     position: absolute;
     top: var(--header-height);
-    left: 0;
     width: 100%;
-    flex-direction: column;
-    background-color: white;
-    padding: 20px;
     box-shadow: var(--shadow-md);
-    text-align: center;
-    gap: 15px;
-    margin: 0;
-    z-index: 100;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .auth-buttons {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-left: 0;
-  }
-
-  /* Content modifications for mobile */
-  .main-content {
+  .layout-wrapper {
     padding: 1rem;
-  }
-
-  .card-body {
-    padding: 60px 20px 24px;
-  }
-
-  .avatar {
-    width: 64px;
-    height: 64px;
-    bottom: -32px;
-    left: 20px;
-  }
-
-  .job-title {
-    font-size: 26px;
-  }
-
-  .profile-details,
-  .key-details,
-  .skills-section,
-  .job-description,
-  .about-company,
-  .actions {
-    padding: 24px 20px;
   }
 
   .actions {
@@ -620,7 +476,6 @@ nav.header {
 }
 
 @media (max-width: 480px) {
-  /* Smaller screens adjustments */
   body {
     padding-top: 60px;
   }
@@ -629,125 +484,200 @@ nav.header {
     --header-height: 60px;
   }
 
-  nav.header {
-    padding: 0 1rem;
+  .avatar {
+    width: 64px;
+    height: 64px;
+    bottom: -32px;
   }
 
-  .auth-buttons {
-    gap: 10px;
-  }
-
-  .btn {
-    padding: 7px 12px;
-    font-size: 13px;
-  }
-  
-  .logo {
-    font-size: 20px;
-  }
-
-  .job-container {
-    border-radius: 16px;
-  }
-
-  .banner {
-    height: 150px;
-  }
-
-  .key-details {
-    grid-template-columns: 1fr;
+  .job-title {
+    font-size: 26px;
   }
 }
-/* Updated CSS for fluid pill effect */
-
-/* Create CSS variables to control the fluid pill */
-:root {
-  --pill-width: 0px;
-  --pill-left: 0px;
-  --pill-transition: 0.3s ease;
-  --pill-color: transparent;
-  --pill-border-color: #000000; /* Black border */
-}
-
-/* Center navbar elements horizontally */
-nav.header {
-  display: flex;
-  justify-content: center; /* Center the navbar content */
-  align-items: center;
-  padding: 0 2rem;
-  height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* Adjust nav-links for centering */
-.nav-links {
-  position: relative;
-  display: flex;
-  gap: 30px;
-  margin: 0 auto; /* Center horizontally */
-  padding-left: 0; /* Remove left padding */
-}
-
-/* Create the pill pseudo-element */
-.nav-links::before {
-  content: "";
-  position: absolute;
-  width: var(--pill-width);
-  left: var(--pill-left);
-  height: 36px; /* Adjust height as needed */
-  background-color: var(--pill-color); /* Transparent background */
-  border-radius: 18px;
-  border: 1px solid var(--pill-border-color); /* Black border */
-  transition: all var(--pill-transition);
-  z-index: -1;
-  opacity: 0;
-  transform: translateY(-50%);
-  top: 50%;
-}
-
-/* Show the pill when hovering the container */
-.nav-links:hover::before {
-  opacity: 1;
-}
-
-/* Ensure links have proper positioning and padding */
-.nav-links a {
-  position: relative;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 500;
-  transition: var(--transition);
-  padding: 8px 16px;
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  min-width: 300px; /* wider sidebar */
+  background: transparent;
+  padding: 20px;
   border-radius: 20px;
-  z-index: 1;
+  box-shadow: var(--shadow-md);
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--header-height) + 40px);
 }
 
-/* Remove the hover background if any exists */
-.nav-links a:hover {
-  background-color: transparent;
+.sidebar-job-card {
+  background: #e6ff00;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 16px; /* a little less padding for less height */
+  transition: all 0.3s ease;
+  min-height: 250px; /* fixed minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-job-content {
+  background: white;
+  border-radius: 16px;
+  padding: 20px; /* smaller padding */
+  text-align: left; /* Align text to left */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-job-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.sidebar-job-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.sidebar-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start; /* Align meta tags to left */
+}
+
+.sidebar-job-meta span {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.sidebar-job-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-job-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar-job-user img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-job-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.sidebar-job-actions a {
+  font-size: 14px;
+  font-weight: 500;
   color: var(--primary);
+  text-decoration: none;
 }
 
-
-
-/* Additional CSS to maintain layout with centered navbar */
-.logo {
-  margin-right: auto; /* Push logo to left */
+.sidebar-job-actions a:hover {
+  text-decoration: underline;
+}
+/* Sidebar */
+.sidebar {
+  flex: 0 0 30%;
+  background: transparent;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--header-height) + 30px);
 }
 
-.auth-buttons {
-  margin-left: auto; /* Push buttons to right */
+/* Sidebar Card */
+.sidebar-job-card {
+  background: #e6ff00;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  transition: all 0.3s ease;
+  min-height: 180px; /* Optional: control card minimum height */
 }
 
-/* Ensure responsiveness */
-@media (max-width: 768px) {
-  nav.header {
-    justify-content: space-between; /* Revert to space-between on mobile */
-  }
-  
-  .nav-links {
-    margin: 0; /* Reset margin */
-    justify-content: center; /* Center items when in column layout */
+.sidebar-job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Inner Box */
+.sidebar-job-content {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 12px;
+  text-align: left; /* Align inner text to left */
+}
+
+/* Text improvements */
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sidebar-job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.sidebar-job-meta span {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+/* User section smaller */
+.sidebar-job-user {
+  font-size: 13px;
+}
+
+.sidebar-job-user img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Sidebar actions */
+.sidebar-job-actions a {
+  font-size: 13px;
+}
+
+/* Reduce sidebar top margin in mobile view */
+@media (max-width: 1024px) {
+  .sidebar {
+    flex: 1;
+    margin-top: 20px;
   }
 }
