@@ -29,3 +29,37 @@ const searchBtn = document.querySelector('.search-btn');
             alert(`Applying for: ${jobTitle}`);
         });
     });
+    function animateStats() {
+        const stats = document.querySelector('.stats');
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        if (isElementInViewport(stats)) {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace('+', '').replace(/,/g, ''));
+                const duration = 2000;
+                const increment = target / (duration / 16); 
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        stat.textContent = target.toLocaleString() + '+';
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString() + '+';
+                    }
+                }, 16);
+            });
+            window.removeEventListener('scroll', animateStats);
+        }
+    }
+    
+    window.addEventListener('scroll', animateStats);
+    animateStats(); 
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
