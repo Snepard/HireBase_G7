@@ -22,3 +22,10 @@ const searchBtn = document.querySelector('.search-btn');
             alert(`Searching for: ${searchInput.value}`);
         });
     }
+    const applyButtons = document.querySelectorAll('.job-card .btn-primary');
+    applyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const jobTitle = this.closest('.job-card').querySelector('.job-title').textContent;
+            alert(`Applying for: ${jobTitle}`);
+        });
+    });
