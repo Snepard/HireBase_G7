@@ -1,91 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HireBase</title>
-  <meta name="description"
-    content="HireBase connects top talent with amazing companies. Find your dream job or build your dream team with our advanced matching platform." />
-  <link rel="stylesheet" href="index.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiety - Modern Job Search Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="index.css">
 </head>
-
 <body>
+  <!-- Decorative elements -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+
+  <!-- Background waves -->
+  <svg class="wave-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="rgba(236, 72, 153, 0.1)" fill-opacity="1" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,165.3C960,149,1056,139,1152,154.7C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    <path fill="rgba(139, 92, 246, 0.1)" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,160C384,149,480,107,576,122.7C672,139,768,213,864,224C960,235,1056,181,1152,138.7C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+
   <header>
-    <div class="container-full">
-      <nav class="header transparent" id="mainNavbar">
-        <a href="#" class="logo">
-          <i class="fas fa-briefcase"></i>
-          Hire<span>Base</span>
-        </a>
-        
-        <div class="nav-links" id="navMenu">
-          <a href="#" class="active">Home</a>
-          <a href="find-jobs.html">Find Jobs</a>
-          <a href="find-candidates.html">Find Candidates</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact.html">Contact</a>
+    <div class="container">
+      <header>
+        <div class="container-full">
+          <nav class="header transparent" id="mainNavbar">
+            <a href="#" class="logo">
+              <i class="fas fa-briefcase"></i>
+              Hire<span>Base</span>
+            </a>
+            
+            <div class="nav-links" id="navMenu">
+              <a href="#" class="active">Home</a>
+              <a href="find-jobs.html">Find Jobs</a>
+              <a href="find-candidates.html">Find Candidates</a>
+              <a href="blog.html">Blog</a>
+              <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="auth-buttons">
+              <a href="#" class="get-started">
+                Get Started
+                <span class="get-started-icon">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
+            </div>
+            
+          
+          </nav>
         </div>
-        
-        <div class="auth-buttons">
-          <a href="login.html">
-            <button class="btn btn-primary">
-              Get Started
-            </button>
-          </a>
-        </div>
-        
-        <div class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle navigation">
-          ☰
-        </div>
+      </header>
+       
       </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-text fade-in">
-          <h1>Find Your Dream Job or Top Talent</h1>
-          <p class="delay-1">
-            Join thousands of companies and job seekers using HireBase to
-            connect with the perfect opportunities and candidates.
-          </p>
-          <div class="search-box delay-2">
-            <input type="text" class="search-input" placeholder="Job title, keywords, or company" />
-            <button class="search-btn">
-              <i class="fas fa-search"></i>
-              Search Jobs
-            </button>
+      <!-- Floating job cards with overlapping effect -->
+      <div class="floating-cards">
+        <!-- Product Designer Card -->
+        <div class="job-card job-card-top">
+          <div class="job-title">
+            <div class="job-icon">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+            <div class="job-name">Product Designer</div>
           </div>
-          <div class="stats delay-3">
-            <div class="stat-item">
-              <div class="stat-number">50K+</div>
-              <div class="stat-text">Jobs Available</div>
+          <div class="job-tags">
+            <div class="job-tag-small">Full Time</div>
+            <div class="job-tag-small">Remote</div>
+          </div>
+          <div class="job-company">New York, United States</div>
+          <div class="job-salary">
+            $152K <span class="job-period">/month</span>
+          </div>
+        </div>
+
+        <!-- Product Manager Card -->
+        <div class="job-card job-card-middle">
+          <div class="job-title">
+            <div class="job-icon">
+              <i class="fas fa-briefcase"></i>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">10K+</div>
-              <div class="stat-text">Companies Hiring</div>
+            <div class="job-name">Product Designer Manager</div>
+          </div>
+          <div class="job-company">Figma • Full Time</div>
+        </div>
+
+        <!-- Designer Engineer Card -->
+        <div class="job-card job-card-right">
+          <div class="job-title">
+            <div class="job-icon engineer-icon">
+              <i class="fas fa-code"></i>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">1M+</div>
-              <div class="stat-text">Active Candidates</div>
+            <div class="job-name">Design Engineer</div>
+          </div>
+        </div>
+
+        <!-- Success Rate Card -->
+
+
+        <!-- Match Rate Card -->
+        <div class="stats-card match-card">
+          <div class="metric-row">
+            <div class="metric-icon match-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+              <span class="metric-value">80%</span>
+              <span class="metric-label">Match/Present</span>
             </div>
           </div>
         </div>
-        <div class="hero-image fade-in delay-1">
-          <img
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-            alt="Happy team at work" />
+
+        <!-- Category Chart Card -->
+        <div class="stats-card chart-card">
+          <div class="chart-title">Top Job Categories</div>
+          <div class="chart-bars">
+            <div class="chart-bar chart-bar-1">
+              <div class="chart-percent">60%</div>
+              <div class="chart-label">Product</div>
+            </div>
+            <div class="chart-bar chart-bar-2">
+              <div class="chart-percent">75%</div>
+              <div class="chart-label">Creative</div>
+            </div>
+            <div class="chart-bar chart-bar-3">
+              <div class="chart-percent">40%</div>
+              <div class="chart-label">IT/Eng</div>
+            </div>
+            <div class="chart-bar chart-bar-4">
+              <div class="chart-percent">85%</div>
+              <div class="chart-label">Sales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <h1>Modernizing the<br>Job Search Experience</h1>
+        <p class="hero-subtitle">Search and find your dream job now easier than ever, you can simply browse and find a job if you need it.</p>
+
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for a job...">
+            <select class="category-select">
+              <option>All Categories</option>
+              <option>Web Development</option>
+              <option>UI/UX Design</option>
+              <option>Data Science</option>
+              <option>Marketing</option>
+              <option>Product Management</option>
+            </select>
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="popular-jobs">
+          <span>Popular:</span>
+          <div class="job-tag">Full Stack</div>
+          <div class="job-tag">UI/UX Designer</div>
+          <div class="job-tag">Data Scientist</div>
+          <div class="job-tag">Product Manager</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Trusted by section -->
+  <section class="trusted-by">
+    <div class="container">
+      <div class="trusted-heading">Trusted by leading companies</div>
+      <div class="logos-container">
+        <div class="logos-wrapper">
+          
+          <div class="company-logo">
+            <i class="fas fa-rocket"></i>
+            <span>Launchify</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-code"></i>
+            <span>DevSpark</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-shopping-cart"></i>
+            <span>ShopEase</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-cloud"></i>
+            <span>CloudNest</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>SecureTech</span>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <section class="features">
     <div class="container">
       <div class="section-title">
@@ -308,8 +431,10 @@
       </div>
     </div>
   </footer>
-
   <script src="index.js"></script>
-</body>
 
+
+   
+
+</body>
 </html>
