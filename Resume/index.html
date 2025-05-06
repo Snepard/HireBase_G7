@@ -101,23 +101,8 @@
             </div>
         </div>
     </div>
-    <script>
-        const navLinks = document.querySelector(".nav-links");
-        const links = navLinks.querySelectorAll("a");
-      
-        navLinks.addEventListener("mousemove", (e) => {
-          const hovered = Array.from(links).find(link => link === e.target || link.contains(e.target));
-          if (hovered) {
-            const { offsetLeft: left, offsetWidth: width } = hovered;
-            navLinks.style.setProperty("--pill-left", `${left}px`);
-            navLinks.style.setProperty("--pill-width", `${width}px`);
-          }
-        });
-      
-        navLinks.addEventListener("mouseleave", () => {
-          navLinks.style.setProperty("--pill-width", "0");
-        });
-      </script>
+  
+  
       
     <script src="script.js"></script>
 </body>

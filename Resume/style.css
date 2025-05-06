@@ -1,11 +1,14 @@
 :root {
-    --primary: #3498db;
-    --secondary: #2ecc71;
-    --dark: #2c3e50;
+    --primary: #4361ee;
+    --secondary: #2ec4b6;
+    --dark: #1e2a3a;
+    --light: #f8f9fa;
     --transition: all 0.3s ease;
     --pill-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --header-height: 70px;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 25px rgba(67, 97, 238, 0.15);
   }
   
   /* Reset and Base Styles */
@@ -20,9 +23,11 @@
     background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
-    padding-top: var(--header-height); /* Add padding to body to account for fixed header */
+    padding-top: var(--header-height);
+    transition: background-color 0.5s ease;
   }
   
+  /* Header and Navbar */
   header {
     position: fixed;
     top: 0;
@@ -33,6 +38,12 @@
     z-index: 1000;
     display: flex;
     align-items: center;
+    transition: box-shadow 0.3s ease, transform 0.4s ease;
+  }
+  
+  header.scrolled {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px) translateY(5px);
   }
   
   /* Navbar Container */
@@ -55,17 +66,25 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
   }
   
   .logo span {
     color: var(--secondary);
+    transition: color 0.3s ease;
   }
   
-  /* Navigation Links */
+  /* Navigation Links - Now Right Aligned */
   .nav-links {
     display: flex;
     gap: 30px;
     position: relative;
+    margin-left: auto; /* Push to right */
+    align-items: center;
   }
   
   .nav-links a {
@@ -81,6 +100,7 @@
   
   .nav-links a:hover {
     color: var(--primary);
+    transform: translateY(-2px);
   }
   
   .nav-links a.active {
@@ -88,14 +108,14 @@
     font-weight: 600;
   }
   
-  /* Fluid Pill Hover Effect */
+  /* Improved Fluid Pill Hover Effect */
   .nav-links::before {
     content: "";
     position: absolute;
     height: 36px;
     width: var(--pill-width, 0px);
     left: var(--pill-left, 0px);
-    background-color: rgba(52, 152, 219, 0.1);
+    background-color: rgba(67, 97, 238, 0.08);
     border: 1px solid var(--primary);
     border-radius: 18px;
     transition: var(--pill-transition);
@@ -103,6 +123,7 @@
     transform: translateY(-50%);
     z-index: 0;
     opacity: 0;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.15);
   }
   
   .nav-links:hover::before {
@@ -114,9 +135,14 @@
     display: none;
     font-size: 28px;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
   
-  /* Mobile Menu */
+  .hamburger:hover {
+    color: var(--primary);
+  }
+  
+  /* Mobile Menu with Animation */
   .nav-links.mobile-active {
     display: flex;
     flex-direction: column;
@@ -125,8 +151,20 @@
     left: 0;
     width: 100%;
     background: white;
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: var(--shadow-sm);
+    animation: slideDown 0.3s ease forwards;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Responsive Design */
@@ -143,147 +181,357 @@
     .nav-links::before {
       display: none;
     }
+    
+    .nav-links.mobile-active a {
+      padding: 15px 0;
+      border-bottom: 1px solid #f0f0f0;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .nav-links.mobile-active a:last-child {
+      border-bottom: none;
+    }
   }
-
-/* Resume Builder Layout */
-.resume-builder {
+  
+  /* Resume Builder Layout - Modern & Animated */
+  .resume-builder {
     display: flex;
     gap: 30px;
-}
-
-.form-section, .preview-section {
+    max-width: 1280px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  .form-section, .preview-section {
     flex: 1;
     background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Styles */
-h2 {
-    color: #2c3e50;
-    margin: 20px 0 15px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ecf0f1;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .form-section:hover, .preview-section:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+  }
+  
+  /* Form Styles */
+  h2 {
+    color: var(--dark);
+    margin: 20px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+    transition: color 0.3s ease;
     font-weight: 600;
-    color: #34495e;
-}
-
-input, textarea {
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Staggered animation for form groups */
+  .form-group:nth-child(1) { animation-delay: 0.1s; }
+  .form-group:nth-child(2) { animation-delay: 0.2s; }
+  .form-group:nth-child(3) { animation-delay: 0.3s; }
+  .form-group:nth-child(4) { animation-delay: 0.4s; }
+  .form-group:nth-child(5) { animation-delay: 0.5s; }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .form-group:focus-within label {
+    color: var(--primary);
+    transform: translateX(5px);
+  }
+  
+  input, textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 16px;
-}
-
-textarea {
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+    outline: none;
+  }
+  
+  textarea {
     resize: vertical;
-    min-height: 60px;
-}
-
-button {
-    background-color: #3498db;
+    min-height: 80px;
+  }
+  
+  button {
+    background-color: var(--primary);
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 4px;
+    padding: 14px 24px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-#downloadBtn {
-    background-color: #27ae60;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button:hover {
+    background-color: #3651d1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Button click effect */
+  button:after {
+    content: "";
+    position: absolute;
     width: 100%;
-}
-
-#downloadBtn:hover {
-    background-color: #219653;
-}
-
-#downloadBtn:disabled {
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+  }
+  
+  button:active:after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
+  
+  #downloadBtn {
+    background-color: var(--secondary);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #downloadBtn:hover {
+    background-color: #25b0a3;
+  }
+  
+  #downloadBtn:disabled {
     background-color: #95a5a6;
     cursor: not-allowed;
-}
-
-/* Preview Styles */
-.resume-preview {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Add download icon */
+  #downloadBtn::before {
+    content: "⬇";
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  #downloadBtn:hover::before {
+    transform: translateY(3px);
+  }
+  
+  /* Preview Styles */
+  .resume-preview {
     background: white;
-    padding: 25px;
-    min-height: 400px;
+    padding: 30px;
+    min-height: 500px;
     border: 1px solid #ecf0f1;
     margin-bottom: 20px;
-}
-
-.preview-placeholder {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm) inset;
+  }
+  
+  .preview-placeholder {
     color: #95a5a6;
     text-align: center;
-    margin-top: 50px;
-}
-
-/* Generated Resume Styles */
-.generated-resume h1 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.generated-resume .contact-info {
-    margin-bottom: 20px;
-    color: #7f8c8d;
-}
-
-.generated-resume section {
-    margin-bottom: 20px;
-}
-
-.generated-resume h2 {
-    color: #3498db;
-    margin: 15px 0 10px;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.generated-resume .job, .generated-resume .education {
+    margin-top: 100px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
+  /* Generated Resume Styles */
+  .generated-resume {
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .generated-resume h1 {
+    color: var(--primary);
     margin-bottom: 15px;
-}
-
-.generated-resume .job-title, .generated-resume .degree {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  
+  .generated-resume .contact-info {
+    margin-bottom: 25px;
+    color: #616161;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .generated-resume section {
+    margin-bottom: 25px;
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Staggered animation for resume sections */
+  .generated-resume section:nth-child(1) { animation-delay: 0.1s; }
+  .generated-resume section:nth-child(2) { animation-delay: 0.2s; }
+  .generated-resume section:nth-child(3) { animation-delay: 0.3s; }
+  
+  .generated-resume h2 {
+    color: var(--primary);
+    margin: 20px 0 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+    font-size: 20px;
+  }
+  
+  .generated-resume .job, .generated-resume .education {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+  }
+  
+  .generated-resume .job:hover, .generated-resume .education:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+    border-left-color: var(--primary);
+  }
+  
+  .generated-resume .job-title, .generated-resume .degree {
     font-weight: 600;
-}
-
-.generated-resume .company, .generated-resume .university {
+    color: var(--dark);
+    margin-bottom: 5px;
+  }
+  
+  .generated-resume .company, .generated-resume .university {
     font-style: italic;
-    color: #7f8c8d;
-}
-
-.generated-resume .dates {
-    color: #7f8c8d;
+    color: #616161;
+    margin-bottom: 8px;
+  }
+  
+  .generated-resume .dates {
+    color: #757575;
     font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
+    display: inline-block;
+    background: #f5f7fa;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  /* Responsiveness improvements */
+  @media (max-width: 768px) {
     .resume-builder {
-        flex-direction: column;
+      flex-direction: column;
     }
     
-    header h1 {
-        font-size: 2rem;
+    .form-section, .preview-section {
+      width: 100%;
     }
-}
+    
+    .form-section:hover, .preview-section:hover {
+      transform: none;
+    }
+  }
+  
+  /* Dark mode support - you can toggle this with JS */
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode header,
+  body.dark-mode .form-section,
+  body.dark-mode .preview-section,
+  body.dark-mode .resume-preview {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode h2 {
+    color: #f0f0f0;
+    border-bottom-color: #333;
+  }
+  
+  body.dark-mode label {
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode input, 
+  body.dark-mode textarea {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .generated-resume h1,
+  body.dark-mode .generated-resume h2 {
+    color: var(--secondary);
+  }
+  
+  /* Smooth page transitions */
+  .page-transition {
+    animation: fadeInPage 0.6s ease;
+  }
+  
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add this script to activate animations */
