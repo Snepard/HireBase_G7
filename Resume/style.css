@@ -1,0 +1,179 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Resume Builder Layout */
+.resume-builder {
+    display: flex;
+    gap: 30px;
+}
+
+.form-section, .preview-section {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+h2 {
+    color: #2c3e50;
+    margin: 20px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#downloadBtn {
+    background-color: #27ae60;
+    width: 100%;
+}
+
+#downloadBtn:hover {
+    background-color: #219653;
+}
+
+#downloadBtn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Preview Styles */
+.resume-preview {
+    background: white;
+    padding: 25px;
+    min-height: 400px;
+    border: 1px solid #ecf0f1;
+    margin-bottom: 20px;
+}
+
+.preview-placeholder {
+    color: #95a5a6;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Generated Resume Styles */
+.generated-resume h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.generated-resume .contact-info {
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+
+.generated-resume section {
+    margin-bottom: 20px;
+}
+
+.generated-resume h2 {
+    color: #3498db;
+    margin: 15px 0 10px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.generated-resume .job, .generated-resume .education {
+    margin-bottom: 15px;
+}
+
+.generated-resume .job-title, .generated-resume .degree {
+    font-weight: 600;
+}
+
+.generated-resume .company, .generated-resume .university {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.generated-resume .dates {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-builder {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
