@@ -44,138 +44,17 @@
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="container">
-            <div class="filters-section">
-
-                <div class="mobile-filters-toggle">
-                    <button id="filter-toggle-btn">Filters <i class="fas fa-sliders-h"></i></button>
-                </div>
-                
-                <aside class="filters-sidebar" id="filters-sidebar">
-                    <div class="filter-group">
-                        <h3>Job Type</h3>
-                        <div class="filter-options">
-                            <label class="checkbox-container">Full-time
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Part-time
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Contract
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Remote
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Internship
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Experience Level</h3>
-                        <div class="filter-options">
-                            <label class="checkbox-container">Entry Level
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Mid Level
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Senior Level
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Salary Range</h3>
-                        <div class="range-slider">
-                            <input type="range" min="0" max="200000" value="50000" step="10000" class="slider" id="salary-range">
-                            <div class="range-values">
-                                <span>$0</span>
-                                <span id="salary-value">$50,000</span>
-                                <span>$200,000+</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Location</h3>
-                        <div class="search-input">
-                            <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Search locations">
-                        </div>
-                        <div class="filter-options location-options">
-                            <label class="checkbox-container">United States
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">United Kingdom
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Canada
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Australia
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="checkbox-container">Remote
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <button class="btn apply-filters-btn">Apply Filters</button>
-                    <button class="btn reset-filters-btn">Reset All</button>
-                </aside>
-
-                <section class="job-listings">
-                    <div class="listings-header">
-                        <h2>Showing <span id="job-count">1,245</span> Jobs</h2>
-                        <div class="sort-options">
-                            <label>Sort by:</label>
-                            <select id="sort-by">
-                                <option value="recent">Most Recent</option>
-                                <option value="relevant">Most Relevant</option>
-                                <option value="salary-high">Highest Salary</option>
-                                <option value="salary-low">Lowest Salary</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="job-cards" id="job-cards">
-                        <!-- Job cards will be dynamically inserted here -->
-                    </div>
-                    
-                    <div class="pagination">
-                        <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
-                        <div class="page-numbers">
-                            <button class="page-btn active">1</button>
-                            <button class="page-btn">2</button>
-                            <button class="page-btn">3</button>
-                            <span>...</span>
-                            <button class="page-btn">8</button>
-                        </div>
-                        <button class="pagination-btn">Next <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </section>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-card-bg"></div>
+                <div class="sidebar-card-bg"></div>
+                <h2>Get Your best profession with LuckyJob</h2>
+                <button class="btn-primary">Learn more</button>
             </div>
-        </div>
-    </main>
+        
+        </aside>
+    </div>
 
     <script src="script.js"></script>
 </body>
