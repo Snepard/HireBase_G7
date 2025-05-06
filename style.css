@@ -1,163 +1,361 @@
-/* Global Styles */
 :root {
-    --primary-color: #4a6bff;
-    --primary-hover: #3a56d4;
-    --secondary-color: #f8f9fa;
+    --primary-color: #3498db;
     --text-color: #333;
-    --light-text: #666;
-    --lighter-text: #999;
-    --border-color: #e0e0e0;
-    --white: #fff;
-    --black: #000;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --light-gray: #f5f7fa;
+    --border-color: #eaeef2;
+    --accent-color: #3498db;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f5f9;
     color: var(--text-color);
-    line-height: 1.6;
-    background-color: #f5f7fa;
 }
 
 .container {
-    width: 100%;
+    display: flex;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    gap: 24px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
 }
 
-.btn:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-1px);
+.sidebar-card {
+    background-color: #000;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-image: url('/api/placeholder/280/160');
+    background-size: cover;
 }
 
-.btn.outline {
-    background-color: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.btn.outline:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-/* Header Styles */
-.header {
-    background-color: var(--white);
-    box-shadow: var(--box-shadow);
-    padding: 15px 0;
-    position: sticky;
+.sidebar-card:before {
+    content: '';
+    position: absolute;
     top: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sidebar-card h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.logo p {
-    font-size: 12px;
-    color: var(--light-text);
-}
-
-.main-nav ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.main-nav ul li {
-    margin-left: 20px;
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
+.sidebar-card .btn-primary {
+    position: relative;
+    z-index: 2;
+    background-color: #60b5f5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
     font-weight: 500;
-    transition: color 0.3s;
-}
-
-.main-nav ul li a:hover {
-    color: var(--primary-color);
-}
-.main-content {
-    padding: 40px 0;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 .filters-section {
-    display: flex;
-    gap: 30px;
-}
-
-.mobile-filters-toggle {
-    display: none;
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
 }
 
-.mobile-filters-toggle button {
+.filters-section h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.filter-category {
+    margin-bottom: 20px;
+}
+
+.filter-category-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.filter-option input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.filter-option label {
+    font-size: 15px;
+    color: #4a5568;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+}
+
+.jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.jobs-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-count {
+    background-color: #f2f5f9;
+    color: #4a5568;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sort-controls {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+.sort-value {
+    font-weight: 500;
+}
+
+.sort-icons {
+    margin-left: 5px;
     cursor: pointer;
 }
 
-.filters-sidebar {
-    width: 280px;
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: var(--box-shadow);
-    height: fit-content;
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.filter-group {
-    margin-bottom: 25px;
-}
-
-.filter-group h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: var(--text-color);
-}
-
-.filter-options {
+.job-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.job-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8c9aab;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.bookmark-icon {
+    cursor: pointer;
+    font-size: 16px;
+    color: #8c9aab;
+}
+
+.bookmark-icon.active {
+    color: var(--primary-color);
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.amazon .company-logo {
+    background-color: #ff9900;
+}
+
+.google .company-logo {
+    background-color: white;
+    border: 1px solid #eaeef2;
+}
+
+.dribbble .company-logo {
+    background-color: #ea4c89;
+}
+
+.twitter .company-logo {
+    background-color: #1da1f2;
+}
+
+.airbnb .company-logo {
+    background-color: #ff5a5f;
+}
+
+.apple .company-logo {
+    background-color: #333;
+}
+
+.company-name {
+    color: #8c9aab;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #2d3748;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.job-tag {
+    background-color: #f2f5f9;
+    color: #4a5568;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.job-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.job-salary {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.job-location {
+    color: #8c9aab;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.job-button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Amazon-specific styling */
+.amazon {
+    background-color: #fff9f0;
+}
+
+/* Google-specific styling */
+.google {
+    background-color: #f0f8ff;
+}
+
+/* Dribbble-specific styling */
+.dribbble {
+    background-color: #fef0f7;
+}
+
+/* Twitter-specific styling */
+.twitter {
+    background-color: #f0f9ff;
+}
+
+/* Airbnb-specific styling */
+.airbnb {
+    background-color: #fff0f1;
+}
+
+/* Apple-specific styling */
+.apple {
+    background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
 }
