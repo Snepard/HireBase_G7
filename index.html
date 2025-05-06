@@ -4,51 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings | HireBase</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
-        <div class="filters-container">
-            <div class="dropdown">
-                <i class="fas fa-briefcase"></i>
-                <span class="dropdown-text">Designer</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="dropdown-text">Work location</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-star"></i>
-                <span class="dropdown-text">Experience</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-calendar"></i>
-                <span class="dropdown-text">Per month</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-        <div class="salary-range">
-            <span>Salary range</span>
-            <span class="salary-amount">$1,200 - $20,000</span>
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slider-track"></div>
-                    <div class="slider-handle"></div>
-                    <div class="slider-handle"></div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-card">
-                <div class="sidebar-card-bg"></div>
-                <div class="sidebar-card-bg"></div>
                 <h2>Get Your best profession with LuckyJob</h2>
                 <button class="btn-primary">Learn more</button>
             </div>
@@ -91,7 +54,7 @@
                         <label for="flexible-schedule">Flexible schedule</label>
                     </div>
                     <div class="filter-option">
-                        <input type="checkbox" id="shift-work" checked>
+                        <input type="checkbox" id="shift-work">
                         <label for="shift-work">Shift work</label>
                     </div>
                     <div class="filter-option">
@@ -126,7 +89,9 @@
                             <span class="date">20 May, 2023</span>
                             <i class="far fa-bookmark bookmark-icon"></i>
                         </div>
-                        <div class="company-logo amazon-logo">a</div>
+                        <div class="company-logo amazon-logo">
+                            <i class="fab fa-amazon"></i>
+                        </div>
                         <div class="company-name">Amazon</div>
                         <div class="job-title">Senior UI/UX Designer</div>
                         <div class="job-tags">
@@ -153,7 +118,7 @@
                             <i class="fas fa-bookmark bookmark-icon active"></i>
                         </div>
                         <div class="company-logo google-logo">
-                            <img src="/api/placeholder/32/32" alt="Google Logo">
+                            <i class="fab fa-google"></i>
                         </div>
                         <div class="company-name">Google</div>
                         <div class="job-title">Junior UI/UX Designer</div>
@@ -182,7 +147,7 @@
                             <i class="far fa-bookmark bookmark-icon"></i>
                         </div>
                         <div class="company-logo dribbble-logo">
-                            <i class="fas fa-basketball"></i>
+                            <i class="fab fa-dribbble"></i>
                         </div>
                         <div class="company-name">Dribbble</div>
                         <div class="job-title">Senior Motion Designer</div>
@@ -260,7 +225,7 @@
                 <div class="job-card apple">
                     <div class="job-card-content">
                         <div class="job-date">
-                            <span class="date">10 Jan, 2023</span>
+                            <span class="date">18 Jan, 2023</span>
                             <i class="far fa-bookmark bookmark-icon"></i>
                         </div>
                         <div class="company-logo apple-logo">
@@ -276,7 +241,7 @@
                     <div class="job-info">
                         <div>
                             <div class="job-salary">$140/hr</div>
-                            <div class="job-location">California, CA</div>
+                            <div class="job-location">San Francisco, CA</div>
                         </div>
                         <button class="job-button">Details</button>
                     </div>
@@ -284,7 +249,5 @@
             </div>
         </main>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
