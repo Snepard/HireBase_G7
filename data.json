@@ -1,0 +1,187 @@
+{
+    "jobs": [
+      {
+        "job_id": "job_001",
+        "title": "Staff Therapist",
+        "company_name": "HealthPlus",
+        "location": "Toronto, CA",
+        "posted_by": "Alan",
+        "posted_date": "2 days ago",
+        "experience_level": "Experienced (3+ years)",
+        "employment_type": "Full-time",
+        "salary_range": "$125K - $150K",
+        "specialization": "Clinical patient care",
+        "work_setting": "Hybrid (Office/Remote)",
+        "skills_required": [
+          "Cognitive Behavioral Therapy",
+          "Patient Assessment",
+          "Mental Health Counseling",
+          "Crisis Intervention",
+          "Electronic Health Records (EHR)"
+        ],
+        "responsibilities": [
+          "Provide therapy sessions for individuals and groups",
+          "Develop personalized treatment plans",
+          "Collaborate with other healthcare professionals",
+          "Maintain detailed and confidential client records",
+          "Participate in ongoing training and development"
+        ],
+        "description": "Join HealthPlus as a Staff Therapist and help deliver compassionate, evidence-based therapy services to a diverse patient population.",
+        "about_company": "HealthPlus is a leading provider of integrated health services, committed to promoting mental wellness and innovative patient care across Canada.",
+        "banner_image_url": "https://example.com/images/therapy_session_1.jpg",
+        "poster_avatar_url": "https://via.placeholder.com/40",
+        "job_image_url": "https://example.com/images/job_banner_1.jpg",
+        "sidebar_jobs": [
+          {
+            "title": "Clinical Psychologist",
+            "location": "Toronto, CA",
+            "posted_date": "1 day ago",
+            "employment_type": "Full-time",
+            "salary_range": "$125K - $156K",
+            "posted_by": "Alan"
+          },
+          {
+            "title": "Remote Counselor",
+            "location": "Remote, CA",
+            "posted_date": "3 days ago",
+            "employment_type": "Part-time",
+            "salary_range": "$75K - $95K",
+            "posted_by": "Alan"
+          }
+        ]
+      },
+      {
+        "job_id": "job_002",
+        "title": "Behavioral Health Specialist",
+        "company_name": "MindCare",
+        "location": "Vancouver, CA",
+        "posted_by": "Jessica",
+        "posted_date": "5 days ago",
+        "experience_level": "Entry Level (0-2 years)",
+        "employment_type": "Full-time",
+        "salary_range": "$85K - $100K",
+        "specialization": "Behavioral therapy",
+        "work_setting": "On-site",
+        "skills_required": [
+          "Behavior Analysis",
+          "Crisis Management",
+          "Team Collaboration",
+          "Case Management",
+          "Psychological Assessment"
+        ],
+        "responsibilities": [
+          "Support patients in behavior modification plans",
+          "Work closely with psychiatrists and therapists",
+          "Document patient progress accurately",
+          "Engage in patient advocacy efforts",
+          "Assist with emergency intervention protocols"
+        ],
+        "description": "MindCare is looking for a passionate Behavioral Health Specialist to empower patients with evidence-based interventions and therapies.",
+        "about_company": "MindCare fosters a collaborative, inclusive work environment dedicated to improving lives through accessible mental health care services.",
+        "banner_image_url": "https://example.com/images/therapy_session_2.jpg",
+        "poster_avatar_url": "https://via.placeholder.com/40",
+        "job_image_url": "https://example.com/images/job_banner_2.jpg",
+        "sidebar_jobs": []
+      },
+      {
+        "job_id": "job_003",
+        "title": "Licensed Clinical Social Worker (LCSW)",
+        "company_name": "WellnessFirst",
+        "location": "Calgary, CA",
+        "posted_by": "Rebecca",
+        "posted_date": "4 days ago",
+        "experience_level": "Mid-level (2-5 years)",
+        "employment_type": "Part-time",
+        "salary_range": "$90K - $110K",
+        "specialization": "Social work & therapy",
+        "work_setting": "Remote",
+        "skills_required": [
+          "Family Therapy",
+          "Grief Counseling",
+          "Case Coordination",
+          "Resource Navigation",
+          "Cultural Competency"
+        ],
+        "responsibilities": [
+          "Provide therapy and counseling to individuals and families",
+          "Manage a caseload of diverse clients",
+          "Coordinate community services and referrals",
+          "Lead workshops and group sessions",
+          "Ensure compliance with legal and ethical standards"
+        ],
+        "description": "As a Licensed Clinical Social Worker at WellnessFirst, you’ll play a crucial role in supporting clients through holistic, person-centered approaches.",
+        "about_company": "WellnessFirst is a client-focused mental health organization striving to bridge the gap between communities and care with compassion and innovation.",
+        "banner_image_url": "https://example.com/images/therapy_session_3.jpg",
+        "poster_avatar_url": "https://via.placeholder.com/40",
+        "job_image_url": "https://example.com/images/job_banner_3.jpg",
+        "sidebar_jobs": []
+      },
+      {
+        "job_id": "job_004",
+        "title": "School Psychologist",
+        "company_name": "BrightMinds Academy",
+        "location": "Ottawa, CA",
+        "posted_by": "Nathan",
+        "posted_date": "6 days ago",
+        "experience_level": "Experienced (5+ years)",
+        "employment_type": "Full-time",
+        "salary_range": "$100K - $120K",
+        "specialization": "Educational Psychology",
+        "work_setting": "On-site",
+        "skills_required": [
+          "Student Counseling",
+          "Psychoeducational Assessment",
+          "IEP Development",
+          "Behavioral Interventions",
+          "Data-Driven Decision Making"
+        ],
+        "responsibilities": [
+          "Conduct psychological evaluations for students",
+          "Design individualized educational plans",
+          "Collaborate with teachers and parents",
+          "Provide crisis intervention",
+          "Support mental health initiatives in schools"
+        ],
+        "description": "BrightMinds Academy seeks a dedicated School Psychologist to help students thrive academically, socially, and emotionally.",
+        "about_company": "BrightMinds Academy is committed to fostering student success through excellence in education and strong support systems for learning.",
+        "banner_image_url": "https://example.com/images/therapy_session_4.jpg",
+        "poster_avatar_url": "https://via.placeholder.com/40",
+        "job_image_url": "https://example.com/images/job_banner_4.jpg",
+        "sidebar_jobs": []
+      },
+      {
+        "job_id": "job_005",
+        "title": "Remote Crisis Counselor",
+        "company_name": "SafeSpace Hotline",
+        "location": "Remote, CA",
+        "posted_by": "Samantha",
+        "posted_date": "1 day ago",
+        "experience_level": "Entry Level (0-2 years)",
+        "employment_type": "Part-time",
+        "salary_range": "$70K - $90K",
+        "specialization": "Crisis Intervention",
+        "work_setting": "Remote",
+        "skills_required": [
+          "Crisis De-escalation",
+          "Suicide Prevention",
+          "Active Listening",
+          "Empathy and Compassion",
+          "Digital Communication Tools"
+        ],
+        "responsibilities": [
+          "Provide immediate emotional support through hotline services",
+          "Assess caller needs and risks",
+          "Develop crisis safety plans",
+          "Coordinate referrals to local agencies",
+          "Document call summaries for case management"
+        ],
+        "description": "Join SafeSpace Hotline as a Remote Crisis Counselor and be a lifeline for individuals experiencing emotional distress, all from the comfort of your home.",
+        "about_company": "SafeSpace Hotline is Canada's leading 24/7 crisis support provider, dedicated to offering safe, confidential, and immediate assistance to those in need.",
+        "banner_image_url": "https://example.com/images/therapy_session_5.jpg",
+        "poster_avatar_url": "https://via.placeholder.com/40",
+        "job_image_url": "https://example.com/images/job_banner_5.jpg",
+        "sidebar_jobs": []
+      }
+    ]
+  }
+  
