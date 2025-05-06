@@ -9,9 +9,27 @@
 <body>
     <div class="container">
         <header>
-            <h1>Resume Builder</h1>
-            <p>Create your professional resume in minutes</p>
-        </header>
+            <div class="container-full">
+              <nav class="header transparent" id="mainNavbar">
+                <a href="#" class="logo">
+                  <i class="fas fa-briefcase"></i>
+                  Hire<span>Base</span>
+                </a>
+          
+                <div class="nav-links" id="navMenu">
+                  <a href="#">Home</a>
+                  <a href="find-jobs.html">Find Jobs</a>
+                  <a href="find-candidates.html">Find Candidates</a>
+                  <a href="blog.html">Blog</a>
+                  <a href="contact.html">Contact</a>
+                </div>
+          
+                <div class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle navigation">
+                  ☰
+                </div>
+              </nav>
+            </div>
+          </header>
 
         <div class="resume-builder">
             <div class="form-section">
@@ -83,7 +101,24 @@
             </div>
         </div>
     </div>
-
+    <script>
+        const navLinks = document.querySelector(".nav-links");
+        const links = navLinks.querySelectorAll("a");
+      
+        navLinks.addEventListener("mousemove", (e) => {
+          const hovered = Array.from(links).find(link => link === e.target || link.contains(e.target));
+          if (hovered) {
+            const { offsetLeft: left, offsetWidth: width } = hovered;
+            navLinks.style.setProperty("--pill-left", `${left}px`);
+            navLinks.style.setProperty("--pill-width", `${width}px`);
+          }
+        });
+      
+        navLinks.addEventListener("mouseleave", () => {
+          navLinks.style.setProperty("--pill-width", "0");
+        });
+      </script>
+      
     <script src="script.js"></script>
 </body>
 </html>

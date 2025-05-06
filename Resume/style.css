@@ -1,39 +1,149 @@
-/* Reset and Base Styles */
-* {
+:root {
+    --primary: #3498db;
+    --secondary: #2ecc71;
+    --dark: #2c3e50;
+    --transition: all 0.3s ease;
+    --pill-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --header-height: 70px;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Reset and Base Styles */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
+  }
+  
+  body {
     background-color: #f5f7fa;
     color: #333;
     line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
+    padding-top: var(--header-height); /* Add padding to body to account for fixed header */
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    height: var(--header-height);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navbar Container */
+  nav.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo span {
+    color: var(--secondary);
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .nav-links a {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: var(--transition);
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+  
+  .nav-links a.active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  /* Fluid Pill Hover Effect */
+  .nav-links::before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    width: var(--pill-width, 0px);
+    left: var(--pill-left, 0px);
+    background-color: rgba(52, 152, 219, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 18px;
+    transition: var(--pill-transition);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0;
+  }
+  
+  .nav-links:hover::before {
+    opacity: 1;
+  }
+  
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu */
+  .nav-links.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: white;
     padding: 20px;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px 0;
-}
-
-header h1 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #7f8c8d;
-    font-size: 1.1rem;
-}
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links:not(.mobile-active) {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+    
+    /* Adjust pill effect for mobile */
+    .nav-links::before {
+      display: none;
+    }
+  }
 
 /* Resume Builder Layout */
 .resume-builder {
