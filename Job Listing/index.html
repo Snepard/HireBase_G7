@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireBase - Find Your Dream Job</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container-full">
+            <nav class="header transparent" id="mainNavbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-briefcase"></i>
+                    Hire<span>Base</span>
+                </a>
+
+                <div class="nav-links" id="navMenu">
+                    <a href="#" class="active">Home</a>
+                    <a href="find-jobs.html">Find Jobs</a>
+                    <a href="find-candidates.html">Find Candidates</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-label="Toggle navigation">
+                    ☰
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-card">
+                <h2>Find Your Dream Job Today!</h2>
+                <button class="btn-primary">Post a Job</button>
+            </div>
+
+            <div class="filters-section">
+                <h3>Filters</h3>
+                
+                <div class="filter-category">
+                    <h4 class="filter-category-title">Job Type</h4>
+                    <div class="filter-option">
+                        <input type="radio" id="fulltime" name="jobType" checked>
+                        <label for="fulltime">Full Time</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="parttime" name="jobType">
+                        <label for="parttime">Part Time</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="contract" name="jobType">
+                        <label for="contract">Contract</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="internship" name="jobType">
+                        <label for="internship">Internship</label>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h4 class="filter-category-title">Experience Level</h4>
+                    <div class="filter-option">
+                        <input type="radio" id="entry" name="expLevel" checked>
+                        <label for="entry">Entry Level</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="junior" name="expLevel">
+                        <label for="junior">Junior Level</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="mid" name="expLevel">
+                        <label for="mid">Mid Level</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="senior" name="expLevel">
+                        <label for="senior">Senior Level</label>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h4 class="filter-category-title">Location</h4>
+                    <div class="filter-option">
+                        <input type="radio" id="remote" name="location" checked>
+                        <label for="remote">Remote</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="onsite" name="location">
+                        <label for="onsite">On-site</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="radio" id="hybrid" name="location">
+                        <label for="hybrid">Hybrid</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="jobs-header">
+                <h2>Available Jobs <span class="job-count" id="jobCount">0</span></h2>
+                <div class="sort-controls">
+                    <span>Sort by:</span>
+                    <span class="sort-value">Newest</span>
+                    <span class="sort-icons">▼</span>
+                </div>
+            </div>
+            
+            <div class="jobs-grid" id="jobsGrid">
+                <!-- Job cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+      
+    </script>
+</body>
+</html>
