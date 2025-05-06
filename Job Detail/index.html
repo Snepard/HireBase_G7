@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Staff Therapist - HealthPlus</title>
+  <title>Job Details - HireBase</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -36,58 +36,11 @@
   <div class="layout-wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h2 class="sidebar-title">More Jobs at HealthPlus</h2>
-
-      <!-- Sidebar Job 1 -->
-      <div class="sidebar-job-card">
-        <div class="sidebar-job-content">
-          <div class="sidebar-job-header">
-            <div class="sidebar-job-location">Toronto, CA</div>
-            <div class="sidebar-job-posted">1 day ago</div>
-          </div>
-          <h3 class="sidebar-job-title">Clinical Psychologist</h3>
-          <div class="sidebar-job-meta">
-            <span>Experienced</span>
-            <span>Full-time</span>
-            <span>$125K - $156K</span>
-          </div>
-        </div>
-        <div class="sidebar-job-footer">
-          <div class="sidebar-job-user">
-            <img src="https://via.placeholder.com/28" alt="User" />
-            Alan
-          </div>
-          <div class="sidebar-job-actions">
-            <a href="#">Share</a>
-            <a href="#">Save</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar Job 2 -->
-      <div class="sidebar-job-card">
-        <div class="sidebar-job-content">
-          <div class="sidebar-job-header">
-            <div class="sidebar-job-location">Remote</div>
-            <div class="sidebar-job-posted">1 week ago</div>
-          </div>
-          <h3 class="sidebar-job-title">Remote Counselor</h3>
-          <div class="sidebar-job-meta">
-            <span>Experienced</span>
-            <span>Contract</span>
-            <span>$98K - $150K</span>
-          </div>
-        </div>
-        <div class="sidebar-job-footer">
-          <div class="sidebar-job-user">
-            <img src="https://via.placeholder.com/28" alt="User" />
-            Alan
-          </div>
-          <div class="sidebar-job-actions">
-            <a href="#">Share</a>
-            <a href="#">Save</a>
-          </div>
-        </div>
+      <h2 class="sidebar-title">More Jobs at <span id="sidebar-company-name">HealthPlus</span></h2>
+      
+      <!-- Sidebar Jobs Container - Will be populated by JavaScript -->
+      <div id="sidebar-jobs-container">
+        <!-- Sidebar jobs will be inserted here dynamically -->
       </div>
     </div>
 
@@ -96,18 +49,18 @@
       
       <!-- Banner Image -->
       <div class="banner">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Therapy session" class="banner-image">
+        <img id="banner-image" src="" alt="Job banner image" class="banner-image">
       </div>
 
       <!-- Job Header + Content (combined) -->
       <div class="card-body">
         <div class="poster-info">
-          <img src="https://via.placeholder.com/40" alt="Alan" class="poster-avatar">
-          <p class="poster-meta">Alan · Posted 2 days ago</p>
+          <img id="poster-avatar" src="" alt="Poster avatar" class="poster-avatar">
+          <p class="poster-meta"><span id="job-poster-name">Alan</span> · Posted <span id="job-posted-date">2 days ago</span></p>
         </div>
 
         <div class="job-header">
-          <h1 class="job-title">Staff Therapist</h1>
+          <h1 class="job-title" id="job-title">Staff Therapist</h1>
           <div class="job-actions">
             <button class="apply-now-btn">Apply now</button>
             <button class="icon-btn"><i class="far fa-heart"></i></button>
@@ -115,12 +68,8 @@
           </div>
         </div>
 
-        <div class="job-meta">
-          <span class="pill"><i class="fas fa-user-tie"></i> Experienced</span>
-          <span class="pill"><i class="fas fa-clock"></i> Full-time</span>
-          <span class="pill"><i class="fas fa-dollar-sign"></i> $125K - $150K</span>
-          <span class="pill"><i class="fas fa-hospital"></i> Clinical patient care</span>
-          <span class="pill"><i class="fas fa-map-marker-alt"></i> Toronto, CA</span>
+        <div class="job-meta" id="job-meta">
+          <!-- Will be populated by JavaScript -->
         </div>
       </div>
 
@@ -128,55 +77,59 @@
       <section class="key-details">
         <div class="detail-block">
           <h3>Experience Level</h3>
-          <p>Experienced (3+ years)</p>
+          <p id="job-experience-level">Experienced (3+ years)</p>
         </div>
         <div class="detail-block">
           <h3>Specialization</h3>
-          <p>Clinical patient care</p>
+          <p id="job-specialization">Clinical patient care</p>
         </div>
         <div class="detail-block">
           <h3>Work Setting</h3>
-          <p>Hybrid (Office/Remote)</p>
+          <p id="job-work-setting">Hybrid (Office/Remote)</p>
         </div>
       </section>
 
       <!-- Skills -->
       <section class="skills-section">
         <h2>Required Skills</h2>
-        <ul class="skills-list">
-          <li>Active listening and a non-judgemental approach</li>
-          <li>The ability to understand people's reactions</li>
-          <li>Excellent verbal communication skills</li>
-          <li>Sensitivity and understanding</li>
-          <li>Patience and the ability to remain calm in stressful situations</li>
+        <ul class="skills-list" id="job-skills">
+          <!-- Will be populated by JavaScript -->
         </ul>
       </section>
 
       <!-- Job Description -->
       <section class="job-description">
         <h2>About The Role</h2>
-        <p>We're seeking an experienced Staff Therapist to join our growing mental health practice. You'll provide high-quality therapeutic services to a diverse client population while collaborating with our multidisciplinary team.</p>
+        <p id="job-description">We're seeking an experienced Staff Therapist to join our growing mental health practice. You'll provide high-quality therapeutic services to a diverse client population while collaborating with our multidisciplinary team.</p>
         <h3>Key Responsibilities</h3>
-        <ul class="responsibilities">
-          <li>Conduct individual and group therapy sessions</li>
-          <li>Develop and implement treatment plans</li>
-          <li>Maintain accurate and confidential client records</li>
-          <li>Participate in case conferences and staff meetings</li>
-          <li>Stay current with best practices in therapeutic interventions</li>
+        <ul class="responsibilities" id="job-responsibilities">
+          <!-- Will be populated by JavaScript -->
         </ul>
       </section>
 
       <!-- About Company -->
       <section class="about-company">
-        <h2>About HealthPlus</h2>
-        <p>HealthPlus is revolutionizing the private health services industry in Canada. While most Canadian citizens receive coverage from the government, we provide premium services that complement public healthcare. Our business is growing rapidly with plans to expand across North America.</p>
+        <h2>About <span id="company-name">HealthPlus</span></h2>
+        <p id="about-company">HealthPlus is revolutionizing the private health services industry in Canada. While most Canadian citizens receive coverage from the government, we provide premium services that complement public healthcare. Our business is growing rapidly with plans to expand across North America.</p>
       </section>
-
-
-
     </div>
   </div>
 </main>
+
+<!-- For testing purposes, let's simulate that we already have a job in sessionStorage -->
+<script>
+  // For demo purposes, let's load the JSON file and set a default job
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      // Store the first job as the current job for demo purposes
+      // In a real app, this would be set when the user clicks on a job listing
+      sessionStorage.setItem('currentJob', JSON.stringify(data.jobs[0]));
+      // Also store all jobs for reference
+      sessionStorage.setItem('allJobs', JSON.stringify(data.jobs));
+    })
+    .catch(error => console.error('Error loading job data:', error));
+</script>
 
 <script src="script.js"></script>
 </body>

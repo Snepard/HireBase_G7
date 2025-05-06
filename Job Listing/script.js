@@ -1,7 +1,7 @@
 // Fetch job data from external JSON file
 async function fetchJobData() {
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('../data.json');
         if (!response.ok) {
             throw new Error('Failed to fetch job data');
         }
@@ -23,11 +23,35 @@ async function fetchJobData() {
                     "employment_type": "Full-time",
                     "salary_range": "$125K - $150K",
                     "specialization": "Clinical patient care",
-                    "work_setting": "Hybrid (Office/Remote)"
+                    "work_setting": "Hybrid (Office/Remote)",
+                    "description": "We're seeking an experienced Staff Therapist to join our growing mental health practice. You'll provide high-quality therapeutic services to a diverse client population while collaborating with our multidisciplinary team.",
+                    "responsibilities": [
+                        "Conduct individual and group therapy sessions",
+                        "Develop and implement treatment plans",
+                        "Maintain accurate and confidential client records",
+                        "Participate in case conferences and staff meetings",
+                        "Stay current with best practices in therapeutic interventions"
+                    ],
+                    "skills": [
+                        "Active listening and a non-judgemental approach",
+                        "The ability to understand people's reactions",
+                        "Excellent verbal communication skills",
+                        "Sensitivity and understanding",
+                        "Patience and the ability to remain calm in stressful situations"
+                    ],
+                    "about_company": "HealthPlus is revolutionizing the private health services industry in Canada. While most Canadian citizens receive coverage from the government, we provide premium services that complement public healthcare. Our business is growing rapidly with plans to expand across North America."
                 }
             ]
         };
     }
+}
+
+// Function to handle job detail navigation
+function navigateToJobDetail(job) {
+    // Store the job data in sessionStorage
+    sessionStorage.setItem('currentJob', JSON.stringify(job));
+    // Navigate to the job detail page
+    window.location.href = '../Job Detail/index.html';
 }
 
 // Function to render job cards
@@ -79,7 +103,7 @@ async function renderJobCards() {
                     <div class="job-salary">${job.salary_range}</div>
                     <div class="job-location">${job.location}</div>
                 </div>
-                <button class="job-button">Details</button>
+                <button class="job-button details-btn" data-job-id="${job.job_id}">Details</button>
             </div>
         `;
         
@@ -112,6 +136,24 @@ async function renderJobCards() {
     
     // Setup bookmark functionality
     setupBookmarkButtons();
+    
+    // Setup details button click handlers
+    setupDetailsButtons(jobData.jobs);
+}
+
+// Function to set up details button functionality
+function setupDetailsButtons(jobs) {
+    const detailsButtons = document.querySelectorAll('.details-btn');
+    
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const jobId = this.getAttribute('data-job-id');
+            const job = jobs.find(j => j.job_id === jobId);
+            if (job) {
+                navigateToJobDetail(job);
+            }
+        });
+    });
 }
 
 // Function to set up bookmark button functionality
@@ -276,12 +318,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Make toggleMenu accessible in the global scope
     window.toggleMenu = toggleMenu;
-});
-// Add click event for show more toggle
-showMoreToggle.addEventListener('click', function (e) {
-    const currentCard = e.target.closest('.job-card');
-    const tagContainer = currentCard.querySelector('.job-tags');
-
-    tagContainer.classList.toggle('expanded');
-    this.textContent = tagContainer.classList.contains('expanded') ? 'Show less' : 'Show more';
 });
