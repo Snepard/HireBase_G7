@@ -14,6 +14,50 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector("nav.header");
   const navLinks = document.querySelectorAll(".nav-links a");
   const navLinksContainer = document.querySelector(".nav-links");
+  const authButtons = document.querySelector(".auth-buttons");
+
+  // Check if user is logged in
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  
+  // Replace "Get Started" with avatar if logged in
+  if (isLoggedIn) {
+    const avatarId = localStorage.getItem("avatarId") || Math.floor(Math.random() * 100);
+    const gender = Math.random() > 0.5 ? "men" : "women";
+    
+    // Remove the "Get Started" button
+    authButtons.innerHTML = `
+      <div class="user-avatar">
+        <img src="https://randomuser.me/api/portraits/${gender}/${avatarId}.jpg" alt="User Avatar" />
+        <div class="dropdown-menu">
+          <a href="Profile/hirebase.html"><i class="fas fa-user"></i> My Profile</a>
+          <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    `;
+    
+    // Add event listener for logout
+    document.getElementById("logout-btn").addEventListener("click", function() {
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("avatarId");
+      window.location.reload();
+    });
+    
+    // Add event listener for avatar dropdown
+    const avatar = document.querySelector(".user-avatar");
+    avatar.addEventListener("click", function(e) {
+      const dropdown = this.querySelector(".dropdown-menu");
+      dropdown.classList.toggle("active");
+      e.stopPropagation();
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(e) {
+      const dropdown = document.querySelector(".dropdown-menu");
+      if (dropdown && dropdown.classList.contains("active")) {
+        dropdown.classList.remove("active");
+      }
+    });
+  }
 
   // Scroll To Top Button
   const scrollToTopBtn = document.createElement("button");
@@ -119,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("click", (event) => {
     const nav = document.getElementById("navMenu");
     const hamburger = document.querySelector(".hamburger");
-    if (nav.classList.contains("active") && !nav.contains(event.target) && !hamburger.contains(event.target)) {
+    if (nav && nav.classList.contains("active") && !nav.contains(event.target) && !hamburger.contains(event.target)) {
       toggleMenu();
     }
   });
