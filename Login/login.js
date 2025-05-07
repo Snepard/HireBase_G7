@@ -21,13 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent default form submission
 
-        // Simulate successful login (replace with actual auth logic if needed)
+        // Get form data
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
         if (email && password) {
+            // Set login state in localStorage
+            localStorage.setItem("isLoggedIn", "true");
+            
+            // Generate random avatar ID
+            const avatarId = Math.floor(Math.random() * 100);
+            localStorage.setItem("avatarId", avatarId);
+            
             // Redirect to job.html
-            window.location.href = "../Job Listing/index.html"; // Adjust path if needed
+            window.location.href = "../index.html"; // Redirect to home page
         } else {
             alert("Please enter both email and password.");
         }
