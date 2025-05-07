@@ -1,53 +1,38 @@
+// signup.js
+
 function togglePassword() {
-    const password = document.getElementById('password');
-    const icon = document.querySelector('.toggle-password');
-    if (password.type === 'password') {
-        password.type = 'text';
-        icon.classList.replace('fa-eye', 'fa-eye-slash');
+    const passwordInput = document.getElementById("password");
+    const toggleIcon = document.querySelector(".toggle-password");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
     } else {
-        password.type = 'password';
-        icon.classList.replace('fa-eye-slash', 'fa-eye');
+        passwordInput.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const accountTypeOptions = document.querySelectorAll('.account-type-option');
-    
-    accountTypeOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            accountTypeOptions.forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-            const input = this.querySelector('input');
-            input.checked = true;
-        });
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
 
-    // Password strength indicator
-    const passwordInput = document.getElementById('password');
-    passwordInput.addEventListener('input', function() {
-        const strengthBar = document.querySelector('.strength-bar');
-        const strengthText = document.querySelector('.strength-text span');
-        const password = this.value;
-        let strength = 0;
-        
-        if (password.length > 0) strength += 1;
-        if (password.length >= 8) strength += 1;
-        if (/[A-Z]/.test(password)) strength += 1;
-        if (/[0-9]/.test(password)) strength += 1;
-        if (/[^A-Za-z0-9]/.test(password)) strength += 1;
-        
-        const width = (strength / 5) * 100;
-        strengthBar.style.width = `${width}%`;
-        
-        if (strength <= 1) {
-            strengthBar.style.backgroundColor = '#ef4444';
-            strengthText.textContent = 'weak';
-        } else if (strength <= 3) {
-            strengthBar.style.backgroundColor = '#f59e0b';
-            strengthText.textContent = 'medium';
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Grab values
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const termsAccepted = document.getElementById("terms").checked;
+
+        if (firstName && lastName && email && password && termsAccepted) {
+            // Simulate successful sign-up and redirect
+            window.location.href = "../Job/job.html"; // Adjust path if needed
         } else {
-            strengthBar.style.backgroundColor = '#10b981';
-            strengthText.textContent = 'strong';
+            alert("Please fill out all fields and accept the terms.");
         }
     });
 });
