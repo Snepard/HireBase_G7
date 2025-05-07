@@ -1,290 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings | HireBase</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiety - Modern Job Search Platform</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <div class="filters-container">
-            <div class="dropdown">
-                <i class="fas fa-briefcase"></i>
-                <span class="dropdown-text">Designer</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="dropdown-text">Work location</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-star"></i>
-                <span class="dropdown-text">Experience</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="dropdown">
-                <i class="fas fa-calendar"></i>
-                <span class="dropdown-text">Per month</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-        <div class="salary-range">
-            <span>Salary range</span>
-            <span class="salary-amount">$1,200 - $20,000</span>
-            <div class="slider-container">
-                <div class="slider">
-                    <div class="slider-track"></div>
-                    <div class="slider-handle"></div>
-                    <div class="slider-handle"></div>
-                </div>
-            </div>
-        </div>
-    </header>
+  <!-- Decorative elements -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
 
+  <!-- Background waves -->
+  <svg class="wave-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="rgba(236, 72, 153, 0.1)" fill-opacity="1" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,165.3C960,149,1056,139,1152,154.7C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    <path fill="rgba(139, 92, 246, 0.1)" fill-opacity="1" d="M0,128L48,138.7C96,149,192,171,288,160C384,149,480,107,576,122.7C672,139,768,213,864,224C960,235,1056,181,1152,138.7C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+
+  <header>
     <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-card">
-                <div class="sidebar-card-bg"></div>
-                <div class="sidebar-card-bg"></div>
-                <h2>Get Your best profession with LuckyJob</h2>
-                <button class="btn-primary">Learn more</button>
+      <header>
+        <div class="container-full">
+          <nav class="header transparent" id="mainNavbar">
+            <a href="#" class="logo">
+              <i class="fas fa-briefcase"></i>
+              Hire<span>Base</span>
+            </a>
+            
+            <div class="nav-links" id="navMenu">
+              <a href="#" class="active">Home</a>
+              <a href="find-jobs.html">Find Jobs</a>
+              <a href="find-candidates.html">Find Candidates</a>
+              <a href="blog.html">Blog</a>
+              <a href="contact.html">Contact</a>
             </div>
             
-            <div class="filters-section">
-                <h3>Filters <i class="fas fa-angle-left"></i></h3>
-                
-                <div class="filter-category">
-                    <div class="filter-category-title">Working schedule</div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="full-time" checked>
-                        <label for="full-time">Full time</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="part-time" checked>
-                        <label for="part-time">Part time</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="internship">
-                        <label for="internship">Internship</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="project-work" checked>
-                        <label for="project-work">Project work</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="volunteering">
-                        <label for="volunteering">Volunteering</label>
-                    </div>
-                </div>
-                
-                <div class="filter-category">
-                    <div class="filter-category-title">Employment type</div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="full-day" checked>
-                        <label for="full-day">Full day</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="flexible-schedule" checked>
-                        <label for="flexible-schedule">Flexible schedule</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="shift-work" checked>
-                        <label for="shift-work">Shift work</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="distant-work" checked>
-                        <label for="distant-work">Distant work</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="shift-method">
-                        <label for="shift-method">Shift method</label>
-                    </div>
-                </div>
+            <div class="auth-buttons">
+              <a href="#" class="get-started">
+                Get Started
+                <span class="get-started-icon">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
             </div>
-        </aside>
-
-        <main class="main-content">
-            <div class="jobs-header">
-                <h2>Recommended jobs <span class="job-count">386</span></h2>
-                <div class="sort-controls">
-                    <span class="sort-text">Sort by:</span>
-                    <span class="sort-value">Last updated</span>
-                    <div class="sort-icons">
-                        <i class="fas fa-arrow-down-short-wide"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="jobs-grid">
-                <!-- Amazon Job -->
-                <div class="job-card amazon">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">20 May, 2023</span>
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                        </div>
-                        <div class="company-logo amazon-logo">a</div>
-                        <div class="company-name">Amazon</div>
-                        <div class="job-title">Senior UI/UX Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Part time</span>
-                            <span class="job-tag">Senior level</span>
-                            <span class="job-tag">Distant</span>
-                            <span class="job-tag">Project work</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$250/hr</div>
-                            <div class="job-location">San Francisco, CA</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-
-                <!-- Google Job -->
-                <div class="job-card google">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">4 Feb, 2023</span>
-                            <i class="fas fa-bookmark bookmark-icon active"></i>
-                        </div>
-                        <div class="company-logo google-logo">
-                            <img src="/api/placeholder/32/32" alt="Google Logo">
-                        </div>
-                        <div class="company-name">Google</div>
-                        <div class="job-title">Junior UI/UX Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full time</span>
-                            <span class="job-tag">Junior level</span>
-                            <span class="job-tag">Distant</span>
-                            <span class="job-tag">Project work</span>
-                            <span class="job-tag">Flexible Schedule</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$150/hr</div>
-                            <div class="job-location">California, CA</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-
-                <!-- Dribbble Job -->
-                <div class="job-card dribbble">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">29 Jan, 2023</span>
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                        </div>
-                        <div class="company-logo dribbble-logo">
-                            <i class="fas fa-basketball"></i>
-                        </div>
-                        <div class="company-name">Dribbble</div>
-                        <div class="job-title">Senior Motion Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Part time</span>
-                            <span class="job-tag">Senior level</span>
-                            <span class="job-tag">Full Day</span>
-                            <span class="job-tag">Shift work</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$260/hr</div>
-                            <div class="job-location">New York, NY</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-
-                <!-- Twitter Job -->
-                <div class="job-card twitter">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">11 Apr, 2023</span>
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                        </div>
-                        <div class="company-logo twitter-logo">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <div class="company-name">Twitter</div>
-                        <div class="job-title">UX Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full time</span>
-                            <span class="job-tag">Middle level</span>
-                            <span class="job-tag">Distant</span>
-                            <span class="job-tag">Project work</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$120/hr</div>
-                            <div class="job-location">California, CA</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-
-                <!-- Airbnb Job -->
-                <div class="job-card airbnb">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">2 Apr, 2023</span>
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                        </div>
-                        <div class="company-logo airbnb-logo">
-                            <i class="fab fa-airbnb"></i>
-                        </div>
-                        <div class="company-name">Airbnb</div>
-                        <div class="job-title">Graphic Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Part time</span>
-                            <span class="job-tag">Senior level</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$300/hr</div>
-                            <div class="job-location">New York, NY</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-
-                <!-- Apple Job -->
-                <div class="job-card apple">
-                    <div class="job-card-content">
-                        <div class="job-date">
-                            <span class="date">10 Jan, 2023</span>
-                            <i class="far fa-bookmark bookmark-icon"></i>
-                        </div>
-                        <div class="company-logo apple-logo">
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <div class="company-name">Apple</div>
-                        <div class="job-title">Graphic Designer</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Part time</span>
-                            <span class="job-tag">Distant</span>
-                        </div>
-                    </div>
-                    <div class="job-info">
-                        <div>
-                            <div class="job-salary">$140/hr</div>
-                            <div class="job-location">California, CA</div>
-                        </div>
-                        <button class="job-button">Details</button>
-                    </div>
-                </div>
-            </div>
-        </main>
+            
+          
+          </nav>
+        </div>
+      </header>
+       
+      </nav>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <section class="hero">
+    <div class="container">
+      <!-- Floating job cards with overlapping effect -->
+      <div class="floating-cards">
+        <!-- Product Designer Card -->
+        <div class="job-card job-card-top">
+          <div class="job-title">
+            <div class="job-icon">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+            <div class="job-name">Product Designer</div>
+          </div>
+          <div class="job-tags">
+            <div class="job-tag-small">Full Time</div>
+            <div class="job-tag-small">Remote</div>
+          </div>
+          <div class="job-company">New York, United States</div>
+          <div class="job-salary">
+            $152K <span class="job-period">/month</span>
+          </div>
+        </div>
+
+        <!-- Product Manager Card -->
+        <div class="job-card job-card-middle">
+          <div class="job-title">
+            <div class="job-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="job-name">Product Designer Manager</div>
+          </div>
+          <div class="job-company">Figma • Full Time</div>
+        </div>
+
+        <!-- Designer Engineer Card -->
+        <div class="job-card job-card-right">
+          <div class="job-title">
+            <div class="job-icon engineer-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="job-name">Design Engineer</div>
+          </div>
+        </div>
+
+        <!-- Success Rate Card -->
+
+
+        <!-- Match Rate Card -->
+        <div class="stats-card match-card">
+          <div class="metric-row">
+            <div class="metric-icon match-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div>
+              <span class="metric-value">80%</span>
+              <span class="metric-label">Match/Present</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Chart Card -->
+        <div class="stats-card chart-card">
+          <div class="chart-title">Top Job Categories</div>
+          <div class="chart-bars">
+            <div class="chart-bar chart-bar-1">
+              <div class="chart-percent">60%</div>
+              <div class="chart-label">Product</div>
+            </div>
+            <div class="chart-bar chart-bar-2">
+              <div class="chart-percent">75%</div>
+              <div class="chart-label">Creative</div>
+            </div>
+            <div class="chart-bar chart-bar-3">
+              <div class="chart-percent">40%</div>
+              <div class="chart-label">IT/Eng</div>
+            </div>
+            <div class="chart-bar chart-bar-4">
+              <div class="chart-percent">85%</div>
+              <div class="chart-label">Sales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <h1>Modernizing the<br>Job Search Experience</h1>
+        <p class="hero-subtitle">Search and find your dream job now easier than ever, you can simply browse and find a job if you need it.</p>
+
+        <div class="search-container">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for a job...">
+            <select class="category-select">
+              <option>All Categories</option>
+              <option>Web Development</option>
+              <option>UI/UX Design</option>
+              <option>Data Science</option>
+              <option>Marketing</option>
+              <option>Product Management</option>
+            </select>
+            <button class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="popular-jobs">
+          <span>Popular:</span>
+          <div class="job-tag">Full Stack</div>
+          <div class="job-tag">UI/UX Designer</div>
+          <div class="job-tag">Data Scientist</div>
+          <div class="job-tag">Product Manager</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted by section -->
+  <section class="trusted-by">
+    <div class="container">
+      <div class="trusted-heading">Trusted by leading companies</div>
+      <div class="logos-container">
+        <div class="logos-wrapper">
+          
+          <div class="company-logo">
+            <i class="fas fa-rocket"></i>
+            <span>Launchify</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-code"></i>
+            <span>DevSpark</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-shopping-cart"></i>
+            <span>ShopEase</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-cloud"></i>
+            <span>CloudNest</span>
+          </div>
+  
+          <div class="company-logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>SecureTech</span>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose HireBase</h2>
+        <p>
+          We provide the best tools and resources to help you find the perfect
+          match for your career or hiring needs.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Quick Hiring</h3>
+          <p>
+            Our advanced matching algorithm connects you with the most
+            relevant candidates or jobs in seconds.
+          </p>
+        </div>
+        <div class="feature-card fade-in delay-1">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Verified Profiles</h3>
+          <p>
+            All candidates and employers go through a rigorous verification
+            process to ensure quality.
+          </p>
+        </div>
+        <div class="feature-card fade-in delay-2">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Career Growth</h3>
+          <p>
+            Access resources and tools to help you grow your career or build
+            your dream team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="job-categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Popular Job Categories</h2>
+        <p>
+          Browse jobs by category to find the perfect match for your skills
+          and experience.
+        </p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card fade-in">
+          <div class="category-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Software Development</h3>
+          <p>1,200+ Jobs Available</p>
+        </div>
+        <div class="category-card fade-in delay-1">
+          <div class="category-icon">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h3>Data Science</h3>
+          <p>850+ Jobs Available</p>
+        </div>
+        <div class="category-card fade-in delay-2">
+          <div class="category-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Design</h3>
+          <p>700+ Jobs Available</p>
+        </div>
+        <div class="category-card fade-in">
+          <div class="category-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Marketing</h3>
+          <p>1,050+ Jobs Available</p>
+        </div>
+        <div class="category-card fade-in delay-1">
+          <div class="category-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <h3>Finance</h3>
+          <p>900+ Jobs Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Success Stories</h2>
+        <p>
+          Hear from people who found their dream jobs and companies who built
+          amazing teams.
+        </p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-text">
+            "HireBase helped me find my dream job in just two weeks! The
+            platform is so intuitive and the job matches were spot on."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-avatar" />
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>Product Designer at TechCorp</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in delay-1">
+          <p class="testimonial-text">
+            "We've hired 5 amazing developers through HireBase in the last
+            year. The quality of candidates is exceptional."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar" />
+            <div class="author-info">
+              <h4>Michael Chen</h4>
+              <p>CTO at StartupX</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in delay-2">
+          <p class="testimonial-text">
+            "After months of searching, I found the perfect remote position
+            through HireBase. The application process was seamless."
+          </p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez" class="author-avatar" />
+            <div class="author-info">
+              <h4>Emma Rodriguez</h4>
+              <p>Senior Developer at RemoteCo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="fade-in">Ready to Take the Next Step?</h2>
+      <p class="fade-in delay-1">
+        Join thousands of companies and job seekers who are already finding
+        success with HireBase.
+      </p>
+      <div class="cta-buttons fade-in delay-2">
+        <button class="btn btn-white">
+          <i class="fas fa-briefcase"></i>
+          Post a Job
+        </button>
+        <button class="btn btn-transparent">
+          <i class="fas fa-file-upload"></i>
+          Upload Resume
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about fade-in">
+          <a href="#" class="footer-logo">Hire<span>Base</span></a>
+          <p>
+            Connecting top talent with amazing companies worldwide. Our
+            mission is to make hiring and job searching simple and effective.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links fade-in delay-1">
+          <h3>For Job Seekers</h3>
+          <ul>
+            <li><a href="#">Browse Jobs</a></li>
+            <li><a href="#">Create Profile</a></li>
+            <li><a href="#">Job Alerts</a></li>
+            <li><a href="#">Career Resources</a></li>
+            <li><a href="#">Salary Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-links fade-in delay-1">
+          <h3>For Employers</h3>
+          <ul>
+            <li><a href="#">Post a Job</a></li>
+            <li><a href="#">Browse Candidates</a></li>
+            <li><a href="#">Pricing Plans</a></li>
+            <li><a href="#">Hiring Resources</a></li>
+            <li><a href="#">Recruitment Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-links fade-in delay-2">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom fade-in delay-2">
+        <p>
+          &copy; 2023 HireBase. All rights reserved. |
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+          <a href="#">Cookie Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+
+
+   
+
 </body>
 </html>
