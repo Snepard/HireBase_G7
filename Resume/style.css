@@ -535,3 +535,722 @@
   }
   
   /* Add this script to activate animations */
+  :root {
+    --primary: #4361ee;
+    --primary-light: rgba(67, 97, 238, 0.1);
+    --secondary: #2ec4b6;
+    --secondary-light: rgba(46, 196, 182, 0.1);
+    --dark: #1e2a3a;
+    --light: #f8f9fa;
+    --gray: #95a5a6;
+    --light-gray: #ecf0f1;
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --header-height: 70px;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 25px rgba(67, 97, 238, 0.15);
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding-top: var(--header-height);
+    transition: var(--transition-slow);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Network Background Animation */
+.network-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 30% 50%, var(--primary-light), transparent 30%),
+                radial-gradient(circle at 70% 80%, var(--secondary-light), transparent 30%);
+    opacity: 0.3;
+}
+
+.network-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, var(--primary) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, var(--secondary) 1px, transparent 1px),
+        radial-gradient(circle at 40% 70%, var(--primary) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, var(--secondary) 1px, transparent 1px);
+    background-size: 200px 200px;
+    opacity: 0.1;
+    animation: float 30s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-5%, -5%);
+    }
+    50% {
+        transform: translate(-10%, 0);
+    }
+    75% {
+        transform: translate(-5%, 5%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Header and Navbar (unchanged from original) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    height: var(--header-height);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease, transform 0.4s ease;
+}
+
+/* Resume Builder Layout - Modern & Animated */
+.resume-builder {
+    display: flex;
+    gap: 30px;
+    max-width: 1280px;
+    margin: 30px auto;
+    padding: 0 20px;
+    perspective: 1000px;
+}
+
+.form-section, .preview-section {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-slow);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-section {
+    transform-style: preserve-3d;
+    animation: slideInLeft 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.preview-section {
+    transform-style: preserve-3d;
+    animation: slideInRight 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.1s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) rotateY(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px) rotateY(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+.form-section:hover, .preview-section:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px) scale(1.005);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Form Header */
+.form-header, .preview-header, .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-header h2, .preview-header h2, .section-header h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Form Styles */
+h2 {
+    color: var(--dark);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-gray);
+    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for form groups */
+.form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-group:nth-child(2) { animation-delay: 0.3s; }
+.form-group:nth-child(3) { animation-delay: 0.4s; }
+.form-group:nth-child(4) { animation-delay: 0.5s; }
+.form-group:nth-child(5) { animation-delay: 0.6s; }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group:focus-within label {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+    outline: none;
+    background-color: white;
+    transform: translateY(-2px);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 14px 24px;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3651d1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--dark);
+    border: 1px solid var(--light-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-gray);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-download {
+    background-color: var(--secondary);
+    color: white;
+    width: 100%;
+}
+
+.btn-download:hover {
+    background-color: #25b0a3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 196, 182, 0.3);
+}
+
+.btn-download:disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-content {
+    transition: transform 0.3s ease;
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+button:hover .btn-content {
+    transform: translateX(5px);
+}
+
+button:hover .btn-icon {
+    transform: translateX(5px) scale(1.2);
+}
+
+/* Button ripple effect */
+button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+}
+
+button:active::after {
+    transform: scale(0, 0);
+    opacity: 0.5;
+    transition: 0s;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* Sample Data Button */
+.sample-data-btn {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.sample-data-btn:hover {
+    background-color: var(--primary-light);
+}
+
+/* Add Section Button */
+.add-section-btn {
+    background-color: transparent;
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.add-section-btn:hover {
+    background-color: var(--secondary-light);
+    transform: scale(1.05);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Preview Styles */
+.resume-preview {
+    background: white;
+    padding: 30px;
+    min-height: 500px;
+    border: 1px solid var(--light-gray);
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-slow);
+    box-shadow: var(--shadow-sm) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-preview::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.03) 0%, rgba(46, 196, 182, 0.03) 100%);
+    z-index: 0;
+}
+
+.preview-placeholder {
+    color: var(--gray);
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.preview-placeholder i {
+    font-size: 50px;
+    color: var(--light-gray);
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.preview-placeholder p {
+    font-size: 18px;
+    max-width: 250px;
+    line-height: 1.5;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Generated Resume Styles */
+.generated-resume {
+    animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.generated-resume h1 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.generated-resume h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 3px;
+}
+
+.generated-resume .contact-info {
+    margin-bottom: 25px;
+    color: #616161;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 15px;
+}
+
+.generated-resume .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.generated-resume section {
+    margin-bottom: 25px;
+    animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for resume sections */
+.generated-resume section:nth-child(1) { animation-delay: 0.1s; }
+.generated-resume section:nth-child(2) { animation-delay: 0.2s; }
+.generated-resume section:nth-child(3) { animation-delay: 0.3s; }
+
+.generated-resume h2 {
+    color: var(--primary);
+    margin: 25px 0 15px;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 8px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.generated-resume h2 i {
+    font-size: 18px;
+}
+
+.generated-resume .job, .generated-resume .education {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: var(--shadow-sm);
+}
+
+.generated-resume .job:hover, .generated-resume .education:hover {
+    background-color: white;
+    border-left-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.generated-resume .job-title, .generated-resume .degree {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.generated-resume .company, .generated-resume .university {
+    font-style: italic;
+    color: #616161;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.generated-resume .dates {
+    color: #757575;
+    font-size: 0.9rem;
+    display: inline-block;
+    background: var(--light-gray);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.generated-resume .job-description {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsiveness improvements */
+@media (max-width: 1024px) {
+    .resume-builder {
+        flex-direction: column;
+    }
+    
+    .form-section, .preview-section {
+        width: 100%;
+    }
+    
+    .form-section:hover, .preview-section:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-header, .preview-header, .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .theme-toggle {
+        margin-top: 15px;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .network-background {
+    background: radial-gradient(circle at 30% 50%, rgba(67, 97, 238, 0.05), transparent 30%),
+                radial-gradient(circle at 70% 80%, rgba(46, 196, 182, 0.05), transparent 30%);
+}
+
+body.dark-mode .network-background::before {
+    background-image: 
+        radial-gradient(circle at 20% 30%, var(--primary) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, var(--secondary) 1px, transparent 1px),
+        radial-gradient(circle at 40% 70%, var(--primary) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, var(--secondary) 1px, transparent 1px);
+    opacity: 0.05;
+}
+
+body.dark-mode .form-section,
+body.dark-mode .preview-section,
+body.dark-mode .resume-preview,
+body.dark-mode .generated-resume .job,
+body.dark-mode .generated-resume .education {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: rgba(40, 40, 40, 0.8);
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #333;
+}
+
+body.dark-mode .preview-placeholder i {
+    color: #333;
+}
+
+body.dark-mode .generated-resume .job-description {
+    color: #bbb;
+}
+
+body.dark-mode .generated-resume .dates {
+    background-color: #333;
+    color: #aaa;
+}
